@@ -15,7 +15,7 @@ extension PlanetResponse: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case count
-        case planets = "result"
+        case planets = "results"
         case next
         case previous
     }

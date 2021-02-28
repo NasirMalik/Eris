@@ -6,7 +6,7 @@ import Foundation
 
 protocol PlanetsRepository {
     
-    typealias FetchCompletion = (Result<[Planet], Error>) -> Void
+    typealias FetchCompletion = (Result<PlanetResponse, Error>) -> Void
     
     func getPlanets(_ completion: @escaping FetchCompletion)
     

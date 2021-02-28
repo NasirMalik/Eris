@@ -9,33 +9,33 @@ public typealias NetworkServiceCompletion<T: Decodable> = (ResultWithError<T>) -
 
 public protocol NetworkService: AnyObject {
     associatedtype EndPoint: EndPointType
+    
     func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<T>)
-    func cancel()
 }
 
 public final class NetworkServiceImpl<EndPoint: EndPointType>: NetworkService {
-    private var task: URLSessionTask?
-    
-    public init() {}
 
+    private let session: URLSession
+    
+    public init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     public func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<T>) {
-        let session = URLSession.shared
+        
         do {
             let request = try buildRequest(from: route)
-            NetworkLogger.log(request: request)
-            task = session.dataTask(with: request) { data, response, error in
-                NetworkLogger.log(response: response)
-                completion(NetworkHelper.shared.handle(data, response, error))
+            let task = session.dataTask(with: request) { data, response, error in
+                completion(ReponseHandler.handle(data, response, error))
             }
+            
+            task.resume()
+            
         } catch {
             completion(.failure(error))
         }
-        task?.resume()
     }
-
-    public func cancel() {
-        task?.cancel()
-    }
+    
 }
 
 private extension NetworkServiceImpl {
@@ -47,15 +47,16 @@ private extension NetworkServiceImpl {
             timeoutInterval: 10.0
         )
         request.httpMethod = route.httpMethod.rawValue
+        
         do {
             switch route.task {
-            case .request:
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            case .requestParameters(let bodyParameters, let bodyEncoding, let urlParameters):
-                try configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
-            case .requestParametersAndHeaders(let bodyParameters, let bodyEncoding, let urlParameters, let additionalHeaders):
-                addAdditionalHeaders(additionalHeaders, request: &request)
-                try configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
+                case .request:
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                case .requestParameters(let bodyParameters, let bodyEncoding, let urlParameters):
+                    try configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
+                case .requestParametersAndHeaders(let bodyParameters, let bodyEncoding, let urlParameters, let additionalHeaders):
+                    addAdditionalHeaders(additionalHeaders, request: &request)
+                    try configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
             }
             return request
         } catch {
@@ -70,13 +71,12 @@ private extension NetworkServiceImpl {
             throw error
         }
     }
-
+    
     func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
     }
-    
 }
 
