@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		463AFADE25EA552400F2786F /* Ceres in Frameworks */ = {isa = PBXBuildFile; productRef = 463AFADD25EA552400F2786F /* Ceres */; };
+		463AFAE625EA8F5700F2786F /* PlanetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */; };
+		46DE2CF325E96CAA00C5A7A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF125E96CAA00C5A7A6 /* Main.storyboard */; };
+		46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */; };
+		46DE2CF825E96CAB00C5A7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */; };
+		46DE2CFB25E96CAB00C5A7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */; };
+		46DE2D0625E96CAC00C5A7A6 /* ErisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */; };
+		46DE2D1125E96CAC00C5A7A6 /* ErisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */; };
+		46DE2D3025E986B700C5A7A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */; };
+		46DE2D3125E986B700C5A7A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */; };
+		46DE2D3625E9880500C5A7A6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3525E9880500C5A7A6 /* AppCoordinator.swift */; };
+		46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */; };
+		46DE2D4525E98A1F00C5A7A6 /* PlanetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D4425E98A1F00C5A7A6 /* PlanetsRepository.swift */; };
+		46DE2D4A25E98A8F00C5A7A6 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D4925E98A8F00C5A7A6 /* Planet.swift */; };
+		46DE2D4F25E98AD100C5A7A6 /* PlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D4E25E98AD100C5A7A6 /* PlanetResponse.swift */; };
+		46DE2D5425E98AFE00C5A7A6 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D5325E98AFE00C5A7A6 /* PlanetsViewController.swift */; };
+		46DE2D5925E98B4400C5A7A6 /* Planets.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2D5825E98B4400C5A7A6 /* Planets.xib */; };
+		46DE2D5E25E98B9C00C5A7A6 /* PlanetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D5D25E98B9C00C5A7A6 /* PlanetsInteractor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46DE2D0225E96CAC00C5A7A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46DE2CE025E96CAA00C5A7A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46DE2CE725E96CAA00C5A7A6;
+			remoteInfo = Eris;
+		};
+		46DE2D0D25E96CAC00C5A7A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46DE2CE025E96CAA00C5A7A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46DE2CE725E96CAA00C5A7A6;
+			remoteInfo = Eris;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		463AFAD825EA544700F2786F /* Ceres */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ceres; sourceTree = "<group>"; };
+		463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsAPI.swift; sourceTree = "<group>"; };
+		46DE2CE825E96CAA00C5A7A6 /* Eris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DE2CF225E96CAA00C5A7A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		46DE2CF525E96CAA00C5A7A6 /* Eris.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eris.xcdatamodel; sourceTree = "<group>"; };
+		46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46DE2CFA25E96CAB00C5A7A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46DE2CFC25E96CAB00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErisTests.swift; sourceTree = "<group>"; };
+		46DE2D0725E96CAC00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErisUITests.swift; sourceTree = "<group>"; };
+		46DE2D1225E96CAC00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		46DE2D3525E9880500C5A7A6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModel.swift; sourceTree = "<group>"; };
+		46DE2D4425E98A1F00C5A7A6 /* PlanetsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRepository.swift; sourceTree = "<group>"; };
+		46DE2D4925E98A8F00C5A7A6 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		46DE2D4E25E98AD100C5A7A6 /* PlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetResponse.swift; sourceTree = "<group>"; };
+		46DE2D5325E98AFE00C5A7A6 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
+		46DE2D5825E98B4400C5A7A6 /* Planets.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Planets.xib; sourceTree = "<group>"; };
+		46DE2D5D25E98B9C00C5A7A6 /* PlanetsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsInteractor.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46DE2CE525E96CAA00C5A7A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				463AFADE25EA552400F2786F /* Ceres in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2CFE25E96CAC00C5A7A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2D0925E96CAC00C5A7A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		463AFADC25EA552400F2786F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		463AFAE425EA8F2D00F2786F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		46DE2CDF25E96CAA00C5A7A6 = {
+			isa = PBXGroup;
+			children = (
+				463AFAD825EA544700F2786F /* Ceres */,
+				46DE2CEA25E96CAA00C5A7A6 /* Eris */,
+				46DE2D0425E96CAC00C5A7A6 /* ErisTests */,
+				46DE2D0F25E96CAC00C5A7A6 /* ErisUITests */,
+				46DE2CE925E96CAA00C5A7A6 /* Products */,
+				463AFADC25EA552400F2786F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		46DE2CE925E96CAA00C5A7A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2CE825E96CAA00C5A7A6 /* Eris.app */,
+				46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */,
+				46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46DE2CEA25E96CAA00C5A7A6 /* Eris */ = {
+			isa = PBXGroup;
+			children = (
+				463AFAE425EA8F2D00F2786F /* Network */,
+				46DE2D2425E986B700C5A7A6 /* Delegates */,
+				46DE2D2F25E986B700C5A7A6 /* Coordiantor */,
+				46DE2D2725E986B700C5A7A6 /* Screens */,
+				46DE2CF125E96CAA00C5A7A6 /* Main.storyboard */,
+				46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */,
+				46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */,
+				46DE2CFC25E96CAB00C5A7A6 /* Info.plist */,
+				46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */,
+			);
+			path = Eris;
+			sourceTree = "<group>";
+		};
+		46DE2D0425E96CAC00C5A7A6 /* ErisTests */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3A25E9898500C5A7A6 /* Mocks */,
+				46DE2D3C25E9898500C5A7A6 /* Tests */,
+				46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */,
+				46DE2D0725E96CAC00C5A7A6 /* Info.plist */,
+			);
+			path = ErisTests;
+			sourceTree = "<group>";
+		};
+		46DE2D0F25E96CAC00C5A7A6 /* ErisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */,
+				46DE2D1225E96CAC00C5A7A6 /* Info.plist */,
+			);
+			path = ErisUITests;
+			sourceTree = "<group>";
+		};
+		46DE2D2425E986B700C5A7A6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */,
+				46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		46DE2D2725E986B700C5A7A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D2825E986B700C5A7A6 /* Planet */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		46DE2D2825E986B700C5A7A6 /* Planet */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D2B25E986B700C5A7A6 /* Models */,
+				46DE2D2925E986B700C5A7A6 /* ViewModel */,
+				46DE2D2C25E986B700C5A7A6 /* ViewControllers */,
+				46DE2D2D25E986B700C5A7A6 /* Views */,
+				46DE2D2A25E986B700C5A7A6 /* Repository */,
+				46DE2D2E25E986B700C5A7A6 /* Network */,
+			);
+			path = Planet;
+			sourceTree = "<group>";
+		};
+		46DE2D2925E986B700C5A7A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46DE2D2A25E986B700C5A7A6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D4425E98A1F00C5A7A6 /* PlanetsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		46DE2D2B25E986B700C5A7A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D4925E98A8F00C5A7A6 /* Planet.swift */,
+				46DE2D4E25E98AD100C5A7A6 /* PlanetResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		46DE2D2C25E986B700C5A7A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D5325E98AFE00C5A7A6 /* PlanetsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		46DE2D2D25E986B700C5A7A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D5825E98B4400C5A7A6 /* Planets.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46DE2D2E25E986B700C5A7A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D6325E992F400C5A7A6 /* Interactor */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		46DE2D2F25E986B700C5A7A6 /* Coordiantor */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3525E9880500C5A7A6 /* AppCoordinator.swift */,
+			);
+			path = Coordiantor;
+			sourceTree = "<group>";
+		};
+		46DE2D3A25E9898500C5A7A6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3B25E9898500C5A7A6 /* Repository */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		46DE2D3B25E9898500C5A7A6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		46DE2D3C25E9898500C5A7A6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3D25E9898500C5A7A6 /* Screens */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		46DE2D3D25E9898500C5A7A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D3E25E9898500C5A7A6 /* ViewModels */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		46DE2D3E25E9898500C5A7A6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		46DE2D6325E992F400C5A7A6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				46DE2D5D25E98B9C00C5A7A6 /* PlanetsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46DE2CE725E96CAA00C5A7A6 /* Eris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46DE2D1525E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "Eris" */;
+			buildPhases = (
+				46DE2CE425E96CAA00C5A7A6 /* Sources */,
+				46DE2CE525E96CAA00C5A7A6 /* Frameworks */,
+				46DE2CE625E96CAA00C5A7A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eris;
+			packageProductDependencies = (
+				463AFADD25EA552400F2786F /* Ceres */,
+			);
+			productName = Eris;
+			productReference = 46DE2CE825E96CAA00C5A7A6 /* Eris.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46DE2D0025E96CAC00C5A7A6 /* ErisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46DE2D1825E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisTests" */;
+			buildPhases = (
+				46DE2CFD25E96CAC00C5A7A6 /* Sources */,
+				46DE2CFE25E96CAC00C5A7A6 /* Frameworks */,
+				46DE2CFF25E96CAC00C5A7A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46DE2D0325E96CAC00C5A7A6 /* PBXTargetDependency */,
+			);
+			name = ErisTests;
+			productName = ErisTests;
+			productReference = 46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		46DE2D0B25E96CAC00C5A7A6 /* ErisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46DE2D1B25E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisUITests" */;
+			buildPhases = (
+				46DE2D0825E96CAC00C5A7A6 /* Sources */,
+				46DE2D0925E96CAC00C5A7A6 /* Frameworks */,
+				46DE2D0A25E96CAC00C5A7A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46DE2D0E25E96CAC00C5A7A6 /* PBXTargetDependency */,
+			);
+			name = ErisUITests;
+			productName = ErisUITests;
+			productReference = 46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46DE2CE025E96CAA00C5A7A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					46DE2CE725E96CAA00C5A7A6 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					46DE2D0025E96CAC00C5A7A6 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 46DE2CE725E96CAA00C5A7A6;
+					};
+					46DE2D0B25E96CAC00C5A7A6 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 46DE2CE725E96CAA00C5A7A6;
+					};
+				};
+			};
+			buildConfigurationList = 46DE2CE325E96CAA00C5A7A6 /* Build configuration list for PBXProject "Eris" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46DE2CDF25E96CAA00C5A7A6;
+			productRefGroup = 46DE2CE925E96CAA00C5A7A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46DE2CE725E96CAA00C5A7A6 /* Eris */,
+				46DE2D0025E96CAC00C5A7A6 /* ErisTests */,
+				46DE2D0B25E96CAC00C5A7A6 /* ErisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46DE2CE625E96CAA00C5A7A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46DE2CFB25E96CAB00C5A7A6 /* LaunchScreen.storyboard in Resources */,
+				46DE2CF825E96CAB00C5A7A6 /* Assets.xcassets in Resources */,
+				46DE2CF325E96CAA00C5A7A6 /* Main.storyboard in Resources */,
+				46DE2D5925E98B4400C5A7A6 /* Planets.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2CFF25E96CAC00C5A7A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2D0A25E96CAC00C5A7A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46DE2CE425E96CAA00C5A7A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				463AFAE625EA8F5700F2786F /* PlanetsAPI.swift in Sources */,
+				46DE2D3625E9880500C5A7A6 /* AppCoordinator.swift in Sources */,
+				46DE2D3025E986B700C5A7A6 /* AppDelegate.swift in Sources */,
+				46DE2D5425E98AFE00C5A7A6 /* PlanetsViewController.swift in Sources */,
+				46DE2D4F25E98AD100C5A7A6 /* PlanetResponse.swift in Sources */,
+				46DE2D5E25E98B9C00C5A7A6 /* PlanetsInteractor.swift in Sources */,
+				46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */,
+				46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */,
+				46DE2D4A25E98A8F00C5A7A6 /* Planet.swift in Sources */,
+				46DE2D3125E986B700C5A7A6 /* SceneDelegate.swift in Sources */,
+				46DE2D4525E98A1F00C5A7A6 /* PlanetsRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2CFD25E96CAC00C5A7A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46DE2D0625E96CAC00C5A7A6 /* ErisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46DE2D0825E96CAC00C5A7A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46DE2D1125E96CAC00C5A7A6 /* ErisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46DE2D0325E96CAC00C5A7A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46DE2CE725E96CAA00C5A7A6 /* Eris */;
+			targetProxy = 46DE2D0225E96CAC00C5A7A6 /* PBXContainerItemProxy */;
+		};
+		46DE2D0E25E96CAC00C5A7A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46DE2CE725E96CAA00C5A7A6 /* Eris */;
+			targetProxy = 46DE2D0D25E96CAC00C5A7A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		46DE2CF125E96CAA00C5A7A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46DE2CF225E96CAA00C5A7A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46DE2CFA25E96CAB00C5A7A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46DE2D1325E96CAC00C5A7A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46DE2D1425E96CAC00C5A7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46DE2D1625E96CAC00C5A7A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = Eris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.Eris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46DE2D1725E96CAC00C5A7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = Eris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.Eris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		46DE2D1925E96CAC00C5A7A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = ErisTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eris.app/Eris";
+			};
+			name = Debug;
+		};
+		46DE2D1A25E96CAC00C5A7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = ErisTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eris.app/Eris";
+			};
+			name = Release;
+		};
+		46DE2D1C25E96CAC00C5A7A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = ErisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Eris;
+			};
+			name = Debug;
+		};
+		46DE2D1D25E96CAC00C5A7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR5R9M69MK;
+				INFOPLIST_FILE = ErisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Eris;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46DE2CE325E96CAA00C5A7A6 /* Build configuration list for PBXProject "Eris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46DE2D1325E96CAC00C5A7A6 /* Debug */,
+				46DE2D1425E96CAC00C5A7A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46DE2D1525E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "Eris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46DE2D1625E96CAC00C5A7A6 /* Debug */,
+				46DE2D1725E96CAC00C5A7A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46DE2D1825E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46DE2D1925E96CAC00C5A7A6 /* Debug */,
+				46DE2D1A25E96CAC00C5A7A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46DE2D1B25E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46DE2D1C25E96CAC00C5A7A6 /* Debug */,
+				46DE2D1D25E96CAC00C5A7A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		463AFADD25EA552400F2786F /* Ceres */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Ceres;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				46DE2CF525E96CAA00C5A7A6 /* Eris.xcdatamodel */,
+			);
+			currentVersion = 46DE2CF525E96CAA00C5A7A6 /* Eris.xcdatamodel */;
+			path = Eris.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 46DE2CE025E96CAA00C5A7A6 /* Project object */;
+}
