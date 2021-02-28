@@ -16,9 +16,11 @@ class PlanetsViewController: UIViewController {
         super.viewDidLoad()
         title = LocalizationConstants.pageTitle.rawValue
     
-        viewModel = PlanetsViewModelImpl()
         let interactor = PlanetsInteractorImpl()
         respository = PlanetsRepositoryImpl(interactor: interactor)
+        
+        viewModel = PlanetsViewModelImpl(resository: respository)
+
         
     }
     
