@@ -27,8 +27,7 @@ struct ReponseHandler {
                     let apiResponse = try JSONDecoder().decode(T.self, from: responseData)
                     return .success(apiResponse)
                 } catch {
-                    return .failure(error)
-                    //return .failure(NetworkResponseError.unableToDecode)
+                    return .failure(NetworkResponseError.unableToDecode)
                 }
             case .failure(let networkFailureError):
                 return .failure(networkFailureError)

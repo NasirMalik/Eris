@@ -6,10 +6,12 @@ import Foundation
 
 protocol PlanetsViewModel {
     var planets: [Planet] { get }
+    
     func loadData()
 }
 
 struct PlanetsViewModelImpl: PlanetsViewModel {
     var planets: [Planet]
+    
     func loadData() {}
 }
