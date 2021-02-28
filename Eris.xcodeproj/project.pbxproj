@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4600077125EC34D700272B25 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600077025EC34D700272B25 /* AppCoordinator.swift */; };
 		4600077F25EC357800272B25 /* Planets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4600077E25EC357800272B25 /* Planets.storyboard */; };
+		4600078425EC40A400272B25 /* PlanetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600078325EC40A400272B25 /* PlanetsTableViewCell.swift */; };
 		463AFADE25EA552400F2786F /* Ceres in Frameworks */ = {isa = PBXBuildFile; productRef = 463AFADD25EA552400F2786F /* Ceres */; };
 		463AFAE625EA8F5700F2786F /* PlanetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */; };
 		46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		4600077025EC34D700272B25 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4600077E25EC357800272B25 /* Planets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Planets.storyboard; sourceTree = "<group>"; };
+		4600078325EC40A400272B25 /* PlanetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTableViewCell.swift; sourceTree = "<group>"; };
 		463AFAD825EA544700F2786F /* Ceres */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ceres; sourceTree = "<group>"; };
 		463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsAPI.swift; sourceTree = "<group>"; };
 		46DE2CE825E96CAA00C5A7A6 /* Eris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eris.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 		4600077C25EC357800272B25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4600078325EC40A400272B25 /* PlanetsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */,
 				46DE2D4A25E98A8F00C5A7A6 /* Planet.swift in Sources */,
 				46DE2D3125E986B700C5A7A6 /* SceneDelegate.swift in Sources */,
+				4600078425EC40A400272B25 /* PlanetsTableViewCell.swift in Sources */,
 				46DE2D4525E98A1F00C5A7A6 /* PlanetsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

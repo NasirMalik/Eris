@@ -11,7 +11,7 @@ protocol PlanetsViewModel {
 }
 
 struct PlanetsViewModelImpl: PlanetsViewModel {
-    var planets: [Planet]
+    var planets = [Planet]()
     
     func loadData() {}
 }
