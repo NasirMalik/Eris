@@ -4,7 +4,7 @@
 
 import Foundation
 
-public protocol ModelConfigurable {
+protocol ModelConfigurable {
     associatedtype Model
     
     func configure(with model: Model)
