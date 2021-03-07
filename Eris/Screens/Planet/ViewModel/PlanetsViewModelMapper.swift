@@ -10,8 +10,8 @@ protocol PlanetsViewModelMapper {
 
 struct PlanetsViewModelMapperImpl: PlanetsViewModelMapper {
     func map(model: Planet) -> PlanetsViewData {
-        return .init(name: model.name ?? "",
-                     detail: model.terrain ?? "")
+        return .init(name: model.name?.uppercased() ?? "",
+                     detail: model.terrain?.capitalized ?? "")
     }
     
 }
