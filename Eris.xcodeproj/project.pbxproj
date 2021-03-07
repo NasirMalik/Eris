@@ -16,19 +16,21 @@
 		46D1B12E25F4CBC60050005B /* PlanetsViewController+Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B12D25F4CBC60050005B /* PlanetsViewController+Localizations.swift */; };
 		46D1B15125F4D31F0050005B /* PlanetsViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15025F4D31F0050005B /* PlanetsViewModelMapper.swift */; };
 		46D1B15925F4D3BB0050005B /* PlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15625F4D3BB0050005B /* PlanetResponse.swift */; };
-		46D1B15A25F4D3BB0050005B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15725F4D3BB0050005B /* Planet.swift */; };
 		46D1B15F25F4D3C90050005B /* PlanetsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15E25F4D3C90050005B /* PlanetsViewData.swift */; };
 		46D1B17B25F4D4920050005B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B17725F4D4920050005B /* UIViewController+Extension.swift */; };
 		46D1B17C25F4D4920050005B /* UIStoryboard+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B17825F4D4920050005B /* UIStoryboard+Names.swift */; };
 		46D1B17D25F4D4920050005B /* UIView+Reuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B17A25F4D4920050005B /* UIView+Reuseable.swift */; };
 		46D1B18225F4D4A50050005B /* ModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B18125F4D4A50050005B /* ModelConfigurable.swift */; };
+		46D1B19825F53FC90050005B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15725F4D3BB0050005B /* Planet.swift */; };
+		46D1B19E25F5788D0050005B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B19D25F5788D0050005B /* CoreDataService.swift */; };
+		46D1B1AD25F580E20050005B /* CoreDataService+Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B1AC25F580E20050005B /* CoreDataService+Planets.swift */; };
+		46D1B1B625F58A110050005B /* NetworkCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B1B525F58A110050005B /* NetworkCheckService.swift */; };
 		46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */; };
 		46DE2CF825E96CAB00C5A7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */; };
 		46DE2CFB25E96CAB00C5A7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */; };
 		46DE2D0625E96CAC00C5A7A6 /* ErisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */; };
 		46DE2D1125E96CAC00C5A7A6 /* ErisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */; };
 		46DE2D3025E986B700C5A7A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */; };
-		46DE2D3125E986B700C5A7A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */; };
 		46DE2D3625E9880500C5A7A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3525E9880500C5A7A6 /* Coordinator.swift */; };
 		46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */; };
 		46DE2D4525E98A1F00C5A7A6 /* PlanetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D4425E98A1F00C5A7A6 /* PlanetsRepository.swift */; };
@@ -69,6 +71,9 @@
 		46D1B17825F4D4920050005B /* UIStoryboard+Names.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Names.swift"; sourceTree = "<group>"; };
 		46D1B17A25F4D4920050005B /* UIView+Reuseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Reuseable.swift"; sourceTree = "<group>"; };
 		46D1B18125F4D4A50050005B /* ModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfigurable.swift; sourceTree = "<group>"; };
+		46D1B19D25F5788D0050005B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		46D1B1AC25F580E20050005B /* CoreDataService+Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Planets.swift"; sourceTree = "<group>"; };
+		46D1B1B525F58A110050005B /* NetworkCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckService.swift; sourceTree = "<group>"; };
 		46DE2CE825E96CAA00C5A7A6 /* Eris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DE2CF525E96CAA00C5A7A6 /* Eris.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eris.xcdatamodel; sourceTree = "<group>"; };
 		46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,7 +86,6 @@
 		46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErisUITests.swift; sourceTree = "<group>"; };
 		46DE2D1225E96CAC00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		46DE2D3525E9880500C5A7A6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModel.swift; sourceTree = "<group>"; };
 		46DE2D4425E98A1F00C5A7A6 /* PlanetsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRepository.swift; sourceTree = "<group>"; };
@@ -123,13 +127,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		4600077825EC352800272B25 /* Extensions */ = {
+		4600077825EC352800272B25 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				46D1B1B425F58A0A0050005B /* Reachability */,
 				46D1B17925F4D4920050005B /* Abstractions */,
 				46D1B17625F4D4920050005B /* Extensions */,
 			);
-			path = Extensions;
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		4600077C25EC357800272B25 /* Views */ = {
@@ -214,6 +219,23 @@
 			path = Abstractions;
 			sourceTree = "<group>";
 		};
+		46D1B19C25F5787A0050005B /* PersistenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				46D1B19D25F5788D0050005B /* CoreDataService.swift */,
+				46D1B1AC25F580E20050005B /* CoreDataService+Planets.swift */,
+			);
+			path = PersistenceLayer;
+			sourceTree = "<group>";
+		};
+		46D1B1B425F58A0A0050005B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				46D1B1B525F58A110050005B /* NetworkCheckService.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		46DE2CDF25E96CAA00C5A7A6 = {
 			isa = PBXGroup;
 			children = (
@@ -241,8 +263,9 @@
 			children = (
 				46DE2D2F25E986B700C5A7A6 /* Coordiantor */,
 				46DE2D2725E986B700C5A7A6 /* Screens */,
+				46D1B19C25F5787A0050005B /* PersistenceLayer */,
 				463AFAE425EA8F2D00F2786F /* Network */,
-				4600077825EC352800272B25 /* Extensions */,
+				4600077825EC352800272B25 /* Supporting */,
 				46DE2D2425E986B700C5A7A6 /* Delegates */,
 				46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */,
 				46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */,
@@ -276,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */,
-				46DE2D2625E986B700C5A7A6 /* SceneDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -549,19 +571,21 @@
 				46DE2D3025E986B700C5A7A6 /* AppDelegate.swift in Sources */,
 				46DE2D5425E98AFE00C5A7A6 /* PlanetsViewController.swift in Sources */,
 				46D1B15F25F4D3C90050005B /* PlanetsViewData.swift in Sources */,
+				46D1B1B625F58A110050005B /* NetworkCheckService.swift in Sources */,
 				46D1B15925F4D3BB0050005B /* PlanetResponse.swift in Sources */,
 				46DE2D5E25E98B9C00C5A7A6 /* PlanetsInteractor.swift in Sources */,
+				46D1B19E25F5788D0050005B /* CoreDataService.swift in Sources */,
 				46D1B12525F4C8E60050005B /* PlanetsViewController+Factory.swift in Sources */,
 				46D1B17D25F4D4920050005B /* UIView+Reuseable.swift in Sources */,
 				46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */,
 				46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */,
 				46D1B12E25F4CBC60050005B /* PlanetsViewController+Localizations.swift in Sources */,
-				46DE2D3125E986B700C5A7A6 /* SceneDelegate.swift in Sources */,
 				4600078425EC40A400272B25 /* PlanetsTableViewCell.swift in Sources */,
-				46D1B15A25F4D3BB0050005B /* Planet.swift in Sources */,
 				46D1B18225F4D4A50050005B /* ModelConfigurable.swift in Sources */,
 				46D1B17C25F4D4920050005B /* UIStoryboard+Names.swift in Sources */,
 				46D1B17B25F4D4920050005B /* UIViewController+Extension.swift in Sources */,
+				46D1B1AD25F580E20050005B /* CoreDataService+Planets.swift in Sources */,
+				46D1B19825F53FC90050005B /* Planet.swift in Sources */,
 				46D1B15125F4D31F0050005B /* PlanetsViewModelMapper.swift in Sources */,
 				46DE2D4525E98A1F00C5A7A6 /* PlanetsRepository.swift in Sources */,
 			);

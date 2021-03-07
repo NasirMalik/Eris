@@ -33,7 +33,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
         repository.getPlanets { [weak self] result in
             switch result {
                 case .success(let response):
-                    self?.planets.append(contentsOf: response.planets)
+                    self?.planets.append(contentsOf: response)
                 case .failure(let error):
                     print(error.localizedDescription)
             }

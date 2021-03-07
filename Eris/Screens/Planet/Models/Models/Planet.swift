@@ -3,20 +3,39 @@
 //
 
 import Foundation
+import CoreData
 
-struct Planet: Decodable {
-    let name: String?
-    let rotationPeriod: Int?
-    let orbitalpPeriod: Int?
-    let diameter: String?
-    let climate: String?
-    let gravity: String?
-    let terrain: String?
-    let surfaceWater: String?
-    let population: String?
-    let residents: [String]?
-    let films: [String]?
-    let created: String?
-    let edited: String?
-    let url: String?
+final class Planet: NSManagedObject, Decodable {
+    enum CodingKeys: CodingKey {
+        case name
+        case rotationPeriod
+        case orbitalPeriod
+        case diameter
+        case climate
+        case gravity
+        case terrain
+        case surfaceWater
+        case created
+        case edited
+        case url
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        let context = CoreDataService.shared.mainContext
+        self.init(context: context)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.rotationPeriod = try container.decode(String.self, forKey: .rotationPeriod)
+        self.orbitalPeriod = try container.decode(String.self, forKey: .orbitalPeriod)
+        self.diameter = try container.decode(String.self, forKey: .diameter)
+        self.climate = try container.decode(String.self, forKey: .climate)
+        self.gravity = try container.decode(String.self, forKey: .gravity)
+        self.terrain = try container.decode(String.self, forKey: .terrain)
+        self.surfaceWater = try container.decode(String.self, forKey: .surfaceWater)
+        self.created = try container.decode(String.self, forKey: .created)
+        self.edited = try container.decode(String.self, forKey: .edited)
+        self.url = try container.decode(String.self, forKey: .url)
+    }
+    
 }

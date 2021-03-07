@@ -7,8 +7,14 @@ import UIKit
 
 extension PlanetsViewController {
     static func make(completion: @escaping (Planet) -> Void ) -> UIViewController {
+        
         let interactor = PlanetsInteractorImpl()
-        let respository = PlanetsRepositoryImpl(interactor: interactor)
+        let persistor = CoreDataService.shared
+        let networkCheck = NetworkCheckService.shared
+        
+        let respository = PlanetsRepositoryImpl(interactor: interactor,
+                                                persistence: persistor,
+                                                networkCheck: networkCheck)
         
         let mapper = PlanetsViewModelMapperImpl()
         let viewModel = PlanetsViewModelImpl(resository: respository,

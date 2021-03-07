@@ -35,6 +35,7 @@ extension PlanetsViewController: UITableViewDataSource {
         }
         
         let planet = viewModel.planets[indexPath.row]
+        // TODO: move data mapping to viewModel
         let viewData = mapper.map(model: planet)
         cell.configure(with: viewData)
         

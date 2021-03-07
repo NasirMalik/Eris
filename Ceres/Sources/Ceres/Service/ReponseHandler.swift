@@ -24,7 +24,7 @@ struct ReponseHandler {
                 do {
                     let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                     print(jsonData)
-                    let apiResponse = try JSONDecoder().decode(Model.self, from: responseData)
+                    let apiResponse = try JSONDecoder.defaultDecoder.decode(Model.self, from: responseData)
                     return .success(apiResponse)
                 } catch(let error) {
                     print(error)
@@ -50,4 +50,13 @@ private extension ReponseHandler {
         }
     }
     
+}
+
+extension JSONDecoder {
+    
+    static var defaultDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
 }

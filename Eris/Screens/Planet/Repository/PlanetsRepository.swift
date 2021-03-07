@@ -3,25 +3,74 @@
 //
 
 import Foundation
+import Network
 
 protocol PlanetsRepository {
-    typealias FetchCompletion = (Result<PlanetResponse, Error>) -> Void
+    typealias FetchCompletion = (Result<[Planet], Error>) -> Void
     
     func getPlanets(_ completion: @escaping FetchCompletion)
     
 }
 
-struct PlanetsRepositoryImpl: PlanetsRepository {
-    let interactor: PlanetsInteractor
+final class PlanetsRepositoryImpl: PlanetsRepository {
     
-    init(interactor: PlanetsInteractor) {
+    let interactor: PlanetsInteractor
+    let persistor: CoreDataService
+    var networkCheck: NetworkCheckService
+    var networkAvailable: Bool = false
+    
+    init(interactor: PlanetsInteractor,
+         persistence: CoreDataService,
+         networkCheck: NetworkCheckService) {
         self.interactor = interactor
+        self.persistor = persistence
+        self.networkCheck = networkCheck
+        
+        networkCheck.addObserver(observer: self)
     }
     
     func getPlanets(_ completion: @escaping FetchCompletion) {
-        interactor.getPlanets(completion: { result in
+        if networkAvailable {
+            interactorFetch(completion)
+        } else {
+            persistenceFetch(completion)
+        }
+    }
+    
+    deinit {
+        networkCheck.removeObserver(observer: self)
+    }
+    
+}
+
+private extension PlanetsRepositoryImpl {
+    
+    func persistenceFetch(_ completion: @escaping FetchCompletion) {
+        persistor.fetchPlanets { (result) in
             completion(result)
+        }
+    }
+    
+    func interactorFetch(_ completion: @escaping FetchCompletion) {
+        interactor.getPlanets(completion: { result in
+            switch result {
+                case .success(let response):
+                    try! self.persistor.savePlanets(planets: response.planets)
+                    completion(.success(response.planets))
+                case .failure(let error):
+                    completion(.failure(error))
+            }
         })
     }
     
+}
+
+extension PlanetsRepositoryImpl: NetworkCheckObserver {
+    func statusDidChange(status: NWPath.Status) {
+        if status == .satisfied {
+            networkAvailable = true
+        }else if status == .unsatisfied {
+            networkAvailable = false
+        }
+    }
 }
