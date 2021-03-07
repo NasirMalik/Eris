@@ -17,13 +17,15 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     let interactor: PlanetsInteractor
     let persistor: CoreDataService
     var networkCheck: NetworkCheckService
+    
+    // TODO: initialize properly
     var networkAvailable: Bool = false
     
     init(interactor: PlanetsInteractor,
-         persistence: CoreDataService,
+         persistor: CoreDataService,
          networkCheck: NetworkCheckService) {
         self.interactor = interactor
-        self.persistor = persistence
+        self.persistor = persistor
         self.networkCheck = networkCheck
         
         networkCheck.addObserver(observer: self)

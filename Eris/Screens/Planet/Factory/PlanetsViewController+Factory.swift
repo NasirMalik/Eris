@@ -13,7 +13,7 @@ extension PlanetsViewController {
         let networkCheck = NetworkCheckService.shared
         
         let respository = PlanetsRepositoryImpl(interactor: interactor,
-                                                persistence: persistor,
+                                                persistor: persistor,
                                                 networkCheck: networkCheck)
         
         let mapper = PlanetsViewModelMapperImpl()
