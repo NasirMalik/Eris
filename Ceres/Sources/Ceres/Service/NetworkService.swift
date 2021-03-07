@@ -14,7 +14,6 @@ public protocol NetworkService: AnyObject {
 }
 
 public final class NetworkServiceImpl<EndPoint: EndPointType>: NetworkService {
-
     private let session: URLSession
     
     public init(session: URLSession = .shared) {

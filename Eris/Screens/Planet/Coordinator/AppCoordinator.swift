@@ -6,7 +6,6 @@ import Foundation
 import UIKit
 
 struct AppCoordinator: Coordinator {
-    
     let window: UIWindow
     let navigationController: UINavigationController
     
@@ -21,6 +20,5 @@ struct AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-    
     
 }

@@ -12,7 +12,6 @@ struct PlanetResponse {
 }
 
 extension PlanetResponse: Decodable {
-    
     enum CodingKeys: String, CodingKey {
         case count
         case planets = "results"

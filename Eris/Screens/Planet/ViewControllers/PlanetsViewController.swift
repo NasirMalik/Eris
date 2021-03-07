@@ -7,10 +7,10 @@ import UIKit
 import Ceres
 
 final class PlanetsViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     var viewModel: PlanetsViewModel!
+    var mapper: PlanetsViewModelMapper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,13 @@ extension PlanetsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetsTableViewCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlanetsTableViewCell.reuseIdentifier) as? PlanetsTableViewCell else {
             return UITableViewCell()
         }
+        
+        let planet = viewModel.planets[indexPath.row]
+        let viewData = mapper.map(model: planet)
+        cell.configure(with: viewData)
         
         return cell
     }
@@ -40,7 +44,6 @@ extension PlanetsViewController: UITableViewDataSource {
 }
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
-    
     func reloadData() {
         activity.stopAnimating()
         tableView.reloadData()

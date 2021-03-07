@@ -8,19 +8,15 @@
 import UIKit
 
 class PlanetsTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var icon: UIImageView!
-    
 }
 
 extension PlanetsTableViewCell: ModelConfigurable {
-    
     func configure(with model: PlanetsViewData) {
         name.text = model.name
         detail.text = model.detail
         icon.image = UIImage(named: model.icon)
-    }
-    
+    }    
 }

@@ -5,7 +5,6 @@
 import Foundation
 
 struct Planet: Decodable {
-    
     let name: String?
     let rotationPeriod: Int?
     let orbitalpPeriod: Int?
@@ -14,11 +13,10 @@ struct Planet: Decodable {
     let gravity: String?
     let terrain: String?
     let surfaceWater: String?
-    let population: Int64?
+    let population: String?
     let residents: [String]?
     let films: [String]?
-    let created: Date?
-    let edited: Date?
+    let created: String?
+    let edited: String?
     let url: String?
-    
 }

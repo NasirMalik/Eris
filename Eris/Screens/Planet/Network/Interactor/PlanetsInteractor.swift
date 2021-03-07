@@ -6,7 +6,6 @@ import Foundation
 import Ceres
 
 protocol PlanetsInteractor {
-    
     typealias FetchCompletion = (Result<PlanetResponse, Error>) -> Void
     
     func getPlanets(completion: @escaping FetchCompletion)

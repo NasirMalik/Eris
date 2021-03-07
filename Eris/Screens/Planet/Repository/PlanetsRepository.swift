@@ -5,7 +5,6 @@
 import Foundation
 
 protocol PlanetsRepository {
-    
     typealias FetchCompletion = (Result<PlanetResponse, Error>) -> Void
     
     func getPlanets(_ completion: @escaping FetchCompletion)
@@ -13,7 +12,6 @@ protocol PlanetsRepository {
 }
 
 struct PlanetsRepositoryImpl: PlanetsRepository {
-    
     let interactor: PlanetsInteractor
     
     init(interactor: PlanetsInteractor) {
@@ -22,7 +20,9 @@ struct PlanetsRepositoryImpl: PlanetsRepository {
     
     func getPlanets(_ completion: @escaping FetchCompletion) {
         interactor.getPlanets(completion: { result in
-            completion(result)
+            DispatchQueue.main.async {
+                completion(result)
+            }
         })
     }
     

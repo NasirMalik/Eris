@@ -35,6 +35,9 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
                 case .failure(let error):
                     print(error.localizedDescription)
             }
+            
+            self?.delegate?.reloadData()
+            
         }
     }
 }

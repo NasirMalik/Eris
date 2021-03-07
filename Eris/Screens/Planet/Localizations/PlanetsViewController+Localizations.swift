@@ -5,9 +5,7 @@
 import Foundation
 
 extension PlanetsViewController {
-    
     enum LocalizationConstants: String {
         case pageTitle = "Planets"
     }
-    
 }

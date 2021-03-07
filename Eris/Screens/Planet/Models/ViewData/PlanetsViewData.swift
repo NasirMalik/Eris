@@ -5,7 +5,6 @@
 import Foundation
 
 struct PlanetsViewData {
-    
     let name: String
     let detail: String
     
