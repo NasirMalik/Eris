@@ -20,9 +20,7 @@ struct PlanetsRepositoryImpl: PlanetsRepository {
     
     func getPlanets(_ completion: @escaping FetchCompletion) {
         interactor.getPlanets(completion: { result in
-            DispatchQueue.main.async {
-                completion(result)
-            }
+            completion(result)
         })
     }
     

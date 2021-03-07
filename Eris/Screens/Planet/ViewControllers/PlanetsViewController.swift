@@ -45,8 +45,10 @@ extension PlanetsViewController: UITableViewDataSource {
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
     func reloadData() {
-        activity.stopAnimating()
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.activity.stopAnimating()
+            self.tableView.reloadData()
+        }
     }
 }
 

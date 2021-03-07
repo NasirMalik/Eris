@@ -7,7 +7,7 @@ import UIKit
 
 extension UIViewController {
     
-    static func instantiateFrom(storyboardName: UIStoryboard.StoryboardName) -> Self {
+    static func instantiate(from storyboardName: UIStoryboard.StoryboardName) -> Self {
         return instantiateFromStoryboardHelper(storyboardName: storyboardName)
     }
     

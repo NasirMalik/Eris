@@ -5,7 +5,7 @@
 import Foundation
 import UIKit
 
-struct AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     let window: UIWindow
     let navigationController: UINavigationController
     
@@ -15,10 +15,15 @@ struct AppCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = PlanetsViewController.make(coordinator: self)
+        let viewController = PlanetsViewController.make(completion: { [weak self] _ in
+            self?.onComplete()
+        })
         navigationController.viewControllers = [viewController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
+    private func onComplete() {
+        // TODO: Complete/Initiate Process here
+    }
 }

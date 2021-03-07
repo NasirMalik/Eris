@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol PlanetsViewModelDelegate {
+protocol PlanetsViewModelDelegate: class {
     func reloadData()
 }
 
@@ -15,16 +15,18 @@ protocol PlanetsViewModel {
 
 final class PlanetsViewModelImpl: PlanetsViewModel {
     
-    let coordinator: AppCoordinator
-    let repository: PlanetsRepository
-    var delegate: PlanetsViewModelDelegate?
+    typealias Completion = (Planet) -> Void
     
+    let repository: PlanetsRepository
+    let onCompletion: Completion
+
+    weak var delegate: PlanetsViewModelDelegate?
     var planets = [Planet]()
     
-    init(coordinator: AppCoordinator,
-         resository: PlanetsRepository) {
-        self.coordinator = coordinator
+    init(resository: PlanetsRepository,
+         onCompletion: @escaping Completion) {
         self.repository = resository
+        self.onCompletion = onCompletion
     }
     
     func loadData() {
