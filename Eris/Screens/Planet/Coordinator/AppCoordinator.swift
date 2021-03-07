@@ -16,8 +16,7 @@ struct AppCoordinator: Coordinator {
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: "Planets", bundle: .main)
-        let viewController = storyboard.instantiateViewController(identifier: "PlanetsViewController")
+        let viewController = PlanetsViewController.make(coordinator: self)
         navigationController.viewControllers = [viewController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

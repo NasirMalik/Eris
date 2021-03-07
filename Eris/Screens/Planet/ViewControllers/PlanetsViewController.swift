@@ -6,41 +6,27 @@ import Foundation
 import UIKit
 import Ceres
 
-class PlanetsViewController: UIViewController {
+final class PlanetsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var respository: PlanetsRepositoryImpl!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     var viewModel: PlanetsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = LocalizationConstants.pageTitle.rawValue
-    
-        let interactor = PlanetsInteractorImpl()
-        respository = PlanetsRepositoryImpl(interactor: interactor)
-        
-        viewModel = PlanetsViewModelImpl(resository: respository)
-
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        respository.getPlanets { result in
-            print(result)
-        }
-    }
-}
-
-extension PlanetsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        activity.startAnimating()
+        viewModel.loadData()
     }
 }
 
 extension PlanetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10//viewModel.planets.count
+        return viewModel.planets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,11 +39,11 @@ extension PlanetsViewController: UITableViewDataSource {
     
 }
 
-private extension PlanetsViewController {
+extension PlanetsViewController: PlanetsViewModelDelegate {
     
-    enum LocalizationConstants: String {
-        case pageTitle = "Planets"
+    func reloadData() {
+        activity.stopAnimating()
+        tableView.reloadData()
     }
-    
 }
 

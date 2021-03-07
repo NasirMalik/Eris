@@ -78,17 +78,28 @@
                                     <outlet property="delegate" destination="4Re-jv-w0m" id="RY5-QL-EOh"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWG-g1-sX1">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="UJR-le-IvP"/>
+                                    <constraint firstAttribute="width" constant="37" id="Uzh-pn-bTV"/>
+                                </constraints>
+                                <color key="color" systemColor="systemPinkColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iLd-xA-kc6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="top" secondItem="vvp-iv-1UE" secondAttribute="top" id="CiM-d4-lxB"/>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="leading" secondItem="iLd-xA-kc6" secondAttribute="leading" id="GU7-zW-sOW"/>
+                            <constraint firstItem="DWG-g1-sX1" firstAttribute="centerY" secondItem="vvp-iv-1UE" secondAttribute="centerY" id="UVk-YA-bNd"/>
+                            <constraint firstItem="DWG-g1-sX1" firstAttribute="centerX" secondItem="vvp-iv-1UE" secondAttribute="centerX" id="bd9-sc-Ph9"/>
                             <constraint firstAttribute="bottom" secondItem="3i6-eV-wSR" secondAttribute="bottom" id="cQb-b9-8zP"/>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="trailing" secondItem="iLd-xA-kc6" secondAttribute="trailing" id="g9R-bg-8JY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="DWG-g1-sX1" id="qUl-jQ-YVh"/>
                         <outlet property="tableView" destination="3i6-eV-wSR" id="hpQ-uK-bCX"/>
                     </connections>
                 </viewController>
@@ -100,6 +111,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

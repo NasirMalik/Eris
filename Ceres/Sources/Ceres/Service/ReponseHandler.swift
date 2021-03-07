@@ -6,7 +6,7 @@ import Foundation
 
 struct ReponseHandler {
     
-    static func handle<T: Decodable>(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> ResultWithError<T> {
+    static func handle<Model: Decodable>(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> ResultWithError<Model> {
     
         if let error = error {
             return .failure(error)
@@ -24,7 +24,7 @@ struct ReponseHandler {
                 do {
                     let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                     print(jsonData)
-                    let apiResponse = try JSONDecoder().decode(T.self, from: responseData)
+                    let apiResponse = try JSONDecoder().decode(Model.self, from: responseData)
                     return .success(apiResponse)
                 } catch {
                     return .failure(NetworkResponseError.unableToDecode)

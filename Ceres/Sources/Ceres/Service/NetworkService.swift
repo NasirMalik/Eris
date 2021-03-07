@@ -4,13 +4,13 @@
 
 import Foundation
 
-public typealias ResultWithError<T> = Result<T, Error>
-public typealias NetworkServiceCompletion<T: Decodable> = (ResultWithError<T>) -> Void
+public typealias ResultWithError<Model> = Result<Model, Error>
+public typealias NetworkServiceCompletion<Model: Decodable> = (ResultWithError<Model>) -> Void
 
 public protocol NetworkService: AnyObject {
     associatedtype EndPoint: EndPointType
     
-    func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<T>)
+    func request<Model: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<Model>)
 }
 
 public final class NetworkServiceImpl<EndPoint: EndPointType>: NetworkService {
@@ -21,7 +21,7 @@ public final class NetworkServiceImpl<EndPoint: EndPointType>: NetworkService {
         self.session = session
     }
     
-    public func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<T>) {
+    public func request<Model: Decodable>(_ route: EndPoint, completion: @escaping NetworkServiceCompletion<Model>) {
         
         do {
             let request = try buildRequest(from: route)

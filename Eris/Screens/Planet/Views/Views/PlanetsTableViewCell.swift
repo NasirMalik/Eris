@@ -9,17 +9,18 @@ import UIKit
 
 class PlanetsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var detail: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        icon.image = UIImage(named: String(format: "planet_%d", Int.random(in: 0...11)))
+extension PlanetsTableViewCell: ModelConfigurable {
+    
+    func configure(with model: PlanetsViewData) {
+        name.text = model.name
+        detail.text = model.detail
+        icon.image = UIImage(named: model.icon)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
+    
 }
