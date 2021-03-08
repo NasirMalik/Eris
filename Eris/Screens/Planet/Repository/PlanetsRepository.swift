@@ -35,7 +35,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
         if networkAvailable {
             interactorFetch(completion)
         } else {
-            persistenceFetch(completion)
+            persistorFetch(completion)
         }
     }
     
@@ -47,7 +47,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
 
 private extension PlanetsRepositoryImpl {
     
-    func persistenceFetch(_ completion: @escaping FetchCompletion) {
+    func persistorFetch(_ completion: @escaping FetchCompletion) {
         persistor.fetchPlanets { (result) in
             completion(result)
         }
