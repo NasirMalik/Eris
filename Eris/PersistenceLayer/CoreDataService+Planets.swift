@@ -29,13 +29,20 @@ extension CoreDataService {
     func savePlanets(planets: [Planet]) throws {
         let context = CoreDataService.shared.backgroundContext()
         planets.forEach {
-            // TODO: Check if entity exists then update
-            
-            let planet = Planet(entity: $0.entity, insertInto: context)
-            planet.name = $0.name
-            planet.terrain = $0.terrain
-            
-            // TODO: Set all properties
+            if let name = $0.name, fetchPlanet(name: name) == nil {
+                let planet = Planet(entity: $0.entity, insertInto: context)
+                planet.name = $0.name
+                planet.terrain = $0.terrain
+                planet.rotationPeriod = $0.rotationPeriod
+                planet.orbitalPeriod = $0.orbitalPeriod
+                planet.diameter = $0.diameter
+                planet.climate = $0.climate
+                planet.gravity = $0.gravity
+                planet.surfaceWater = $0.surfaceWater
+                planet.created = $0.created
+                planet.edited = $0.edited
+                planet.url = $0.url
+            }
         }
         
         do {
@@ -46,3 +53,23 @@ extension CoreDataService {
     }
     
 }
+
+private extension CoreDataService {
+    func fetchPlanet(name: String) -> Planet? {
+        let context = CoreDataService.shared.backgroundContext()
+        let predicate = NSPredicate(format: "name == %@", name)
+        
+        let request: NSFetchRequest<Planet> = Planet.fetchRequest()
+        request.predicate = predicate
+        
+        do {
+            let planetArray = try context.fetch(request)
+            return planetArray.first
+        } catch {
+            debugPrint(error.localizedDescription)
+            return nil
+        }
+    }
+}
+
+

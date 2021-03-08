@@ -15,6 +15,8 @@ final class PlanetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = LocalizationConstants.pageTitle.rawValue
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 90
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -40,36 +40,38 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9V-wY-E2a">
-                                                    <rect key="frame" x="98" y="19" width="288" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgw-TM-u5m">
+                                                    <rect key="frame" x="90" y="19" width="296" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="elL-BC-yY8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uah-RD-0qX">
-                                                    <rect key="frame" x="98" y="39.5" width="288" height="31.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kz-OU-PJ2">
+                                                    <rect key="frame" x="90" y="50" width="296" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
-                                                    <color key="highlightedColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kMP-DX-cQK" firstAttribute="leading" secondItem="IiQ-ky-xzB" secondAttribute="leading" constant="8" id="5Gv-Ua-7nD"/>
-                                                <constraint firstItem="f9V-wY-E2a" firstAttribute="leading" secondItem="kMP-DX-cQK" secondAttribute="trailing" constant="16" id="MaQ-yh-RwW"/>
-                                                <constraint firstAttribute="bottom" secondItem="kMP-DX-cQK" secondAttribute="bottom" constant="8" id="Wwq-pK-gcV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Uah-RD-0qX" secondAttribute="trailing" constant="8" id="Yfg-ej-AvC"/>
+                                                <constraint firstItem="Zgw-TM-u5m" firstAttribute="trailing" secondItem="5kz-OU-PJ2" secondAttribute="trailing" id="HMS-O7-U8Y"/>
+                                                <constraint firstItem="5kz-OU-PJ2" firstAttribute="top" secondItem="Zgw-TM-u5m" secondAttribute="bottom" constant="10" id="O8w-4G-249"/>
+                                                <constraint firstItem="5kz-OU-PJ2" firstAttribute="leading" secondItem="kMP-DX-cQK" secondAttribute="trailing" constant="8" id="XgE-8a-heJ"/>
                                                 <constraint firstItem="kMP-DX-cQK" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="top" constant="8" id="ZPL-PI-hEa"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="f9V-wY-E2a" secondAttribute="trailing" constant="8" id="ckU-F1-n67"/>
-                                                <constraint firstItem="Uah-RD-0qX" firstAttribute="leading" secondItem="kMP-DX-cQK" secondAttribute="trailing" constant="16" id="h1f-eQ-I5S"/>
-                                                <constraint firstItem="f9V-wY-E2a" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="topMargin" constant="8" id="oNw-IQ-GRT"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Uah-RD-0qX" secondAttribute="bottom" constant="8" id="rG3-f8-F22"/>
-                                                <constraint firstItem="Uah-RD-0qX" firstAttribute="top" relation="lessThanOrEqual" secondItem="f9V-wY-E2a" secondAttribute="bottom" id="uHz-BE-WBs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5kz-OU-PJ2" secondAttribute="bottom" constant="8" id="tYW-n9-QgG"/>
+                                                <constraint firstItem="Zgw-TM-u5m" firstAttribute="leading" secondItem="5kz-OU-PJ2" secondAttribute="leading" id="vy0-4g-kw0"/>
+                                                <constraint firstItem="Zgw-TM-u5m" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="topMargin" constant="8" id="xQC-AN-NFc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5kz-OU-PJ2" secondAttribute="trailing" constant="8" id="zQC-CJ-SFy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="detail" destination="Uah-RD-0qX" id="UmJ-Gv-NZs"/>
+                                            <outlet property="detail" destination="5kz-OU-PJ2" id="dP4-qD-eXg"/>
                                             <outlet property="icon" destination="kMP-DX-cQK" id="Vi7-2s-d63"/>
-                                            <outlet property="name" destination="f9V-wY-E2a" id="0Km-il-Iuc"/>
+                                            <outlet property="name" destination="Zgw-TM-u5m" id="9mj-zQ-5JZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -111,9 +113,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
