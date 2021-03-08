@@ -5,7 +5,7 @@
 import Foundation
 
 protocol PlanetsViewModelDelegate: class {
-    func reloadData()
+    func reloadData(state: ViewControllerState)
 }
 
 protocol PlanetsViewModel {
@@ -30,16 +30,16 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
     }
     
     func loadData() {
+        delegate?.reloadData(state: .loading)
         repository.getPlanets { [weak self] result in
             switch result {
                 case .success(let response):
                     self?.planets.append(contentsOf: response)
+                    self?.delegate?.reloadData(state: .success)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self?.delegate?.reloadData(state: .error)
             }
-            
-            self?.delegate?.reloadData()
-            
         }
     }
 }

@@ -6,6 +6,13 @@ import Foundation
 import UIKit
 import Ceres
 
+
+enum ViewControllerState {
+    case loading
+    case error
+    case success
+}
+
 final class PlanetsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
@@ -21,7 +28,6 @@ final class PlanetsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        activity.startAnimating()
         viewModel.loadData()
     }
 }
@@ -47,10 +53,17 @@ extension PlanetsViewController: UITableViewDataSource {
 }
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
-    func reloadData() {
+    func reloadData(state: ViewControllerState) {
         DispatchQueue.main.async {
-            self.activity.stopAnimating()
-            self.tableView.reloadData()
+            switch state {
+                case .loading:
+                    self.activity.startAnimating()
+                case .error:
+                    self.activity.stopAnimating()
+                case .success:
+                    self.activity.stopAnimating()
+                    self.tableView.reloadData()
+            }
         }
     }
 }

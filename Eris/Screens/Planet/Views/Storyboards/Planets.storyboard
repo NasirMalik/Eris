@@ -28,20 +28,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kMP-DX-cQK">
-                                                    <rect key="frame" x="8" y="8" width="74" height="74"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kMP-DX-cQK">
+                                                    <rect key="frame" x="8" y="16" width="54" height="54"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="74" id="CX0-cO-T4s"/>
-                                                        <constraint firstAttribute="width" constant="74" id="iHp-OZ-9fN"/>
+                                                        <constraint firstAttribute="height" constant="54" id="CX0-cO-T4s"/>
+                                                        <constraint firstAttribute="width" constant="54" id="iHp-OZ-9fN"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="37"/>
+                                                            <integer key="value" value="27"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgw-TM-u5m">
-                                                    <rect key="frame" x="90" y="19" width="296" height="21"/>
+                                                    <rect key="frame" x="70" y="19" width="316" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="elL-BC-yY8"/>
                                                     </constraints>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kz-OU-PJ2">
-                                                    <rect key="frame" x="90" y="50" width="296" height="21"/>
+                                                    <rect key="frame" x="70" y="44" width="316" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -59,9 +59,9 @@
                                             <constraints>
                                                 <constraint firstItem="kMP-DX-cQK" firstAttribute="leading" secondItem="IiQ-ky-xzB" secondAttribute="leading" constant="8" id="5Gv-Ua-7nD"/>
                                                 <constraint firstItem="Zgw-TM-u5m" firstAttribute="trailing" secondItem="5kz-OU-PJ2" secondAttribute="trailing" id="HMS-O7-U8Y"/>
-                                                <constraint firstItem="5kz-OU-PJ2" firstAttribute="top" secondItem="Zgw-TM-u5m" secondAttribute="bottom" constant="10" id="O8w-4G-249"/>
+                                                <constraint firstItem="5kz-OU-PJ2" firstAttribute="top" secondItem="Zgw-TM-u5m" secondAttribute="bottom" constant="4" id="O8w-4G-249"/>
                                                 <constraint firstItem="5kz-OU-PJ2" firstAttribute="leading" secondItem="kMP-DX-cQK" secondAttribute="trailing" constant="8" id="XgE-8a-heJ"/>
-                                                <constraint firstItem="kMP-DX-cQK" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="top" constant="8" id="ZPL-PI-hEa"/>
+                                                <constraint firstItem="kMP-DX-cQK" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="top" constant="16" id="ZPL-PI-hEa"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="5kz-OU-PJ2" secondAttribute="bottom" constant="8" id="tYW-n9-QgG"/>
                                                 <constraint firstItem="Zgw-TM-u5m" firstAttribute="leading" secondItem="5kz-OU-PJ2" secondAttribute="leading" id="vy0-4g-kw0"/>
                                                 <constraint firstItem="Zgw-TM-u5m" firstAttribute="top" secondItem="IiQ-ky-xzB" secondAttribute="topMargin" constant="8" id="xQC-AN-NFc"/>
