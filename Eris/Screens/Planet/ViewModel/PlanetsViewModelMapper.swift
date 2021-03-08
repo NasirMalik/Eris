@@ -10,8 +10,17 @@ protocol PlanetsViewModelMapper {
 
 struct PlanetsViewModelMapperImpl: PlanetsViewModelMapper {
     func map(model: Planet) -> PlanetsViewData {
-        return .init(name: model.name?.uppercased() ?? "",
-                     detail: model.terrain?.capitalized ?? "")
+        return .init(name: model.name!,
+                     rotationPeriod: model.rotationPeriod!,
+                     orbitalPeriod: model.orbitalPeriod!,
+                     diameter: model.diameter!,
+                     climate: model.climate!,
+                     gravity: model.gravity!,
+                     terrain: model.terrain!,
+                     surfaceWater: model.surfaceWater!,
+                     created: model.created!,
+                     edited: model.edited!,
+                     url: model.url!)
     }
     
 }

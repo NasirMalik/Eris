@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="1.0.0">
     <entity name="Planet" representedClassName=".Planet" syncable="YES" codeGenerationType="category">
-        <attribute name="climate" optional="YES" attributeType="String"/>
-        <attribute name="created" optional="YES" attributeType="String"/>
-        <attribute name="diameter" optional="YES" attributeType="String"/>
-        <attribute name="edited" optional="YES" attributeType="String"/>
-        <attribute name="gravity" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="orbitalPeriod" optional="YES" attributeType="String"/>
-        <attribute name="population" optional="YES" attributeType="String"/>
-        <attribute name="rotationPeriod" optional="YES" attributeType="String"/>
-        <attribute name="surfaceWater" optional="YES" attributeType="String"/>
-        <attribute name="terrain" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="climate" attributeType="String" defaultValueString=""/>
+        <attribute name="created" attributeType="String" defaultValueString=""/>
+        <attribute name="diameter" attributeType="String" defaultValueString=""/>
+        <attribute name="edited" attributeType="String" defaultValueString=""/>
+        <attribute name="gravity" attributeType="String" defaultValueString=""/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="orbitalPeriod" attributeType="String" defaultValueString=""/>
+        <attribute name="population" attributeType="String" defaultValueString=""/>
+        <attribute name="rotationPeriod" attributeType="String" defaultValueString=""/>
+        <attribute name="surfaceWater" attributeType="String" defaultValueString=""/>
+        <attribute name="terrain" attributeType="String" defaultValueString=""/>
+        <attribute name="url" attributeType="String" defaultValueString=""/>
     </entity>
     <elements>
         <element name="Planet" positionX="-54" positionY="-9" width="128" height="223"/>
