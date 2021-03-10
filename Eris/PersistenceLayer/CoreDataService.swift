@@ -27,7 +27,7 @@ final class CoreDataService {
     }
     
     /*
-     To be used for long running data saving operation after fetch
+     To be used for long running data saving operation
      */
     func backgroundContext() -> NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()

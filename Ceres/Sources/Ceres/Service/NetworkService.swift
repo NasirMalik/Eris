@@ -7,6 +7,10 @@ import Foundation
 public typealias ResultWithError<Model> = Result<Model, Error>
 public typealias NetworkServiceCompletion<Model: Decodable> = (ResultWithError<Model>) -> Void
 
+/// Usage object: NetworkServiceImpl<API>
+/// Request should infer a Decodable Model object
+/// Response is a Result<Model, Error> Type
+
 public protocol NetworkService: AnyObject {
     associatedtype EndPoint: EndPointType
     
