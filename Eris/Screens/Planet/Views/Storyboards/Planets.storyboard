@@ -21,6 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
+                                <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetsTableViewCell" rowHeight="90" id="Icr-Zj-Ieb" customClass="PlanetsTableViewCell" customModule="Eris" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>

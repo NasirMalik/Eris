@@ -4,14 +4,14 @@
 
 import Foundation
 
-struct PlanetResponse {
+struct Response {
     let count: Int
     let planets: [Planet]
     let next: String?
     let previous: String?
 }
 
-extension PlanetResponse: Decodable {
+extension Response: Decodable {
     enum CodingKeys: String, CodingKey {
         case count
         case planets = "results"
