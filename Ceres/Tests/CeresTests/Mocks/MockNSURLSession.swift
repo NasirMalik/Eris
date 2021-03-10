@@ -10,16 +10,20 @@ final class URLSessionMock: URLSession {
     
     var data: Data?
     var error: Error?
+    var statusCode: Int?
     
-    override func dataTask(
-        with url: URL,
-        completionHandler: @escaping CompletionHandler
-    ) -> URLSessionDataTask {
+    override func dataTask(with request: URLRequest, completionHandler: CompletionHandler?) -> URLSessionDataTask {
+        
         let data = self.data
         let error = self.error
+        var response: HTTPURLResponse? = nil
         
-        return URLSessionDataTaskMock {
-            completionHandler(data, nil, error)
+        if let code = statusCode {
+            response = HTTPURLResponse(url: request.url!, statusCode: code, httpVersion: nil, headerFields: nil)
+        }
+        
+        return URLSessionDataTaskMock.init {
+            completionHandler?(data, response, error)
         }
     }
 }

@@ -16,13 +16,14 @@ final class NetworkServiceTests: XCTestCase {
     
     func testNetwork_Success() {
         
+        session.statusCode = 200
         session.data = StubModel.modelData()
         
         expectation { exp in
             self.sut.request(.getPlanets) { (result: Result<MockResponse, Error>) in
                 switch result {
                     case .success(let response):
-                        XCTAssertEqual(response, 1)
+                        XCTAssertEqual(response, StubModel.modelObject())
                     case .failure(let error):
                         XCTAssertNil(error)
                 }
@@ -33,6 +34,7 @@ final class NetworkServiceTests: XCTestCase {
     }
     
     func testNetwork_Failure() {
+        session.statusCode = nil
         session.data = nil
         
         expectation { exp in

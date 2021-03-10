@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MockPlanet: Decodable, Equatable {
+struct MockPlanet: Codable, Equatable {
     let name: String
     let rotationPeriod: String
     let orbitalPeriod: String
@@ -21,14 +21,14 @@ struct MockPlanet: Decodable, Equatable {
     let url: String
 }
 
-struct MockResponse {
+struct MockResponse: Equatable {
     let count: Int
     let planets: [MockPlanet]
     let next: String?
     let previous: String?
 }
 
-extension MockResponse: Decodable {
+extension MockResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case count
         case planets = "results"
