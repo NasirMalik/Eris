@@ -1,7 +1,4 @@
 //
-//  File.swift
-//  
-//
 //  Created by Nasir Mahmood on 09.03.21.
 //
 

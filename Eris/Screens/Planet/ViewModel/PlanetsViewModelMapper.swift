@@ -12,17 +12,17 @@ protocol PlanetsViewModelMapper {
  */
 struct PlanetsViewModelMapperImpl: PlanetsViewModelMapper {
     func map(model: Planet) -> PlanetsViewData {
-        return .init(name: model.name!,
-                     rotationPeriod: model.rotationPeriod!,
-                     orbitalPeriod: model.orbitalPeriod!,
-                     diameter: model.diameter!,
-                     climate: model.climate!,
-                     gravity: model.gravity!,
-                     terrain: model.terrain!,
-                     surfaceWater: model.surfaceWater!,
-                     created: model.created!,
-                     edited: model.edited!,
-                     url: model.url!)
+        return .init(name: model.name!.uppercased(),
+                     rotationPeriod: model.rotationPeriod!.capitalized,
+                     orbitalPeriod: model.orbitalPeriod!.capitalized,
+                     diameter: model.diameter!.capitalized,
+                     climate: model.climate!.capitalized,
+                     gravity: model.gravity!.capitalized,
+                     terrain: model.terrain!.capitalized,
+                     surfaceWater: model.surfaceWater!.capitalized,
+                     created: model.created!.capitalized,
+                     edited: model.edited!.capitalized,
+                     url: model.url!.capitalized)
     }
     
 }
