@@ -17,16 +17,18 @@ Layers are defined here.
 ### Repository
     Its layer between ViewModel and Data Store that encapuslates Data-source layer. 
 ### Interactor
-    ### Network: Its a wrapper written as a Swift Package Ceres and fetch and decode data from internet. 
+    Network: Its a wrapper written as a Swift Package Ceres and fetch and decode data from internet. 
 ### Persistor
-    ### CoreData: Persistor encapsulates CoreData and fetches and updates data.
+    CoreData: Persistor encapsulates CoreData and fetches and updates data.
         
 ## Considerations
 
 Following are few considerations while writing code
-- Code should be CLEAN
-- Every layer should be interfaced via dependency management and lays foundation for high level DI-Framework
-- Code should be testable and mocks can easily replace original objects
-- Code is following iOS Swift Style Guidelines and have same styling throughtout the code. 
-- DataStore and ViewModels are encapsulated from each other. 
-        
+
+- Code is following `MVVM-C` Architecture. 
+- Every layer is interfaced via `dependency management` and lays foundation for high level DI-Framework
+- Code is `testable` and mocks can easily replaced with original objects
+- Code is following `iOS Swift Style Guidelines` and have same styling throughtout the code. 
+- Project is structured to `scale` as big as it can be 
+- `Folder structure` is highligting the architecture   
+- Network is implemented as an independent `Module (Swift Package)`
