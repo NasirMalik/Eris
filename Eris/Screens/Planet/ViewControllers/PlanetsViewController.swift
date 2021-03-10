@@ -6,7 +6,6 @@ import Foundation
 import UIKit
 import Ceres
 
-
 enum ViewControllerState {
     case loading
     case error

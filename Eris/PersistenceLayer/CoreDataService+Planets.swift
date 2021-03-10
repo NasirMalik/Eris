@@ -57,6 +57,7 @@ extension CoreDataService {
 private extension CoreDataService {
     func fetchPlanet(name: String) -> Planet? {
         let context = CoreDataService.shared.backgroundContext()
+        // TODO: This operation should include timestamp to have most recent data in persistence, from a changing source
         let predicate = NSPredicate(format: "name == %@", name)
         
         let request: NSFetchRequest<Planet> = Planet.fetchRequest()
