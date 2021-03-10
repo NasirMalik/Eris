@@ -4,15 +4,15 @@
 
 import Foundation
 
-final class StubModel {
+final class StubModelFactory {
     
     static func modelData() -> Data {
         let response = modelObject()
         return try! JSONEncoder().encode(response)
     }
     
-    static func modelObject() -> MockResponse {
-        let planet = MockPlanet.init(name: "",
+    static func modelObject() -> StubResponse {
+        let planet = StubPlanet.init(name: "",
                                      rotationPeriod: "",
                                      orbitalPeriod: "",
                                      diameter: "",
@@ -24,10 +24,10 @@ final class StubModel {
                                      edited: "",
                                      url: "")
         
-        return MockResponse.init(count: 1,
-                                 planets: [planet],
-                                 next: nil,
-                                 previous: nil)
+        return StubResponse(count: 1,
+                            planets: [planet],
+                            next: nil,
+                            previous: nil)
     }
     
 }
