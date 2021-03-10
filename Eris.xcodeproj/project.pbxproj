@@ -29,7 +29,6 @@
 		46DE2CF825E96CAB00C5A7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */; };
 		46DE2CFB25E96CAB00C5A7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF925E96CAB00C5A7A6 /* LaunchScreen.storyboard */; };
 		46DE2D0625E96CAC00C5A7A6 /* ErisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */; };
-		46DE2D1125E96CAC00C5A7A6 /* ErisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */; };
 		46DE2D3025E986B700C5A7A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */; };
 		46DE2D3625E9880500C5A7A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3525E9880500C5A7A6 /* Coordinator.swift */; };
 		46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */; };
@@ -40,13 +39,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		46DE2D0225E96CAC00C5A7A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46DE2CE025E96CAA00C5A7A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46DE2CE725E96CAA00C5A7A6;
-			remoteInfo = Eris;
-		};
-		46DE2D0D25E96CAC00C5A7A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46DE2CE025E96CAA00C5A7A6 /* Project object */;
 			proxyType = 1;
@@ -82,9 +74,6 @@
 		46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DE2D0525E96CAC00C5A7A6 /* ErisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErisTests.swift; sourceTree = "<group>"; };
 		46DE2D0725E96CAC00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErisUITests.swift; sourceTree = "<group>"; };
-		46DE2D1225E96CAC00C5A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46DE2D2525E986B700C5A7A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46DE2D3525E9880500C5A7A6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		46DE2D3F25E98A0400C5A7A6 /* PlanetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModel.swift; sourceTree = "<group>"; };
@@ -103,13 +92,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		46DE2CFE25E96CAC00C5A7A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46DE2D0925E96CAC00C5A7A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,7 +224,6 @@
 				463AFAD825EA544700F2786F /* Ceres */,
 				46DE2CEA25E96CAA00C5A7A6 /* Eris */,
 				46DE2D0425E96CAC00C5A7A6 /* ErisTests */,
-				46DE2D0F25E96CAC00C5A7A6 /* ErisUITests */,
 				46DE2CE925E96CAA00C5A7A6 /* Products */,
 				463AFADC25EA552400F2786F /* Frameworks */,
 			);
@@ -253,7 +234,6 @@
 			children = (
 				46DE2CE825E96CAA00C5A7A6 /* Eris.app */,
 				46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */,
-				46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -284,15 +264,6 @@
 				46DE2D0725E96CAC00C5A7A6 /* Info.plist */,
 			);
 			path = ErisTests;
-			sourceTree = "<group>";
-		};
-		46DE2D0F25E96CAC00C5A7A6 /* ErisUITests */ = {
-			isa = PBXGroup;
-			children = (
-				46DE2D1025E96CAC00C5A7A6 /* ErisUITests.swift */,
-				46DE2D1225E96CAC00C5A7A6 /* Info.plist */,
-			);
-			path = ErisUITests;
 			sourceTree = "<group>";
 		};
 		46DE2D2425E986B700C5A7A6 /* Delegates */ = {
@@ -473,24 +444,6 @@
 			productReference = 46DE2D0125E96CAC00C5A7A6 /* ErisTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		46DE2D0B25E96CAC00C5A7A6 /* ErisUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46DE2D1B25E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisUITests" */;
-			buildPhases = (
-				46DE2D0825E96CAC00C5A7A6 /* Sources */,
-				46DE2D0925E96CAC00C5A7A6 /* Frameworks */,
-				46DE2D0A25E96CAC00C5A7A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				46DE2D0E25E96CAC00C5A7A6 /* PBXTargetDependency */,
-			);
-			name = ErisUITests;
-			productName = ErisUITests;
-			productReference = 46DE2D0C25E96CAC00C5A7A6 /* ErisUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -504,10 +457,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					46DE2D0025E96CAC00C5A7A6 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 46DE2CE725E96CAA00C5A7A6;
-					};
-					46DE2D0B25E96CAC00C5A7A6 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 46DE2CE725E96CAA00C5A7A6;
 					};
@@ -528,7 +477,6 @@
 			targets = (
 				46DE2CE725E96CAA00C5A7A6 /* Eris */,
 				46DE2D0025E96CAC00C5A7A6 /* ErisTests */,
-				46DE2D0B25E96CAC00C5A7A6 /* ErisUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -545,13 +493,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		46DE2CFF25E96CAC00C5A7A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46DE2D0A25E96CAC00C5A7A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -599,14 +540,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46DE2D0825E96CAC00C5A7A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46DE2D1125E96CAC00C5A7A6 /* ErisUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -614,11 +547,6 @@
 			isa = PBXTargetDependency;
 			target = 46DE2CE725E96CAA00C5A7A6 /* Eris */;
 			targetProxy = 46DE2D0225E96CAC00C5A7A6 /* PBXContainerItemProxy */;
-		};
-		46DE2D0E25E96CAC00C5A7A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46DE2CE725E96CAA00C5A7A6 /* Eris */;
-			targetProxy = 46DE2D0D25E96CAC00C5A7A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -840,46 +768,6 @@
 			};
 			name = Release;
 		};
-		46DE2D1C25E96CAC00C5A7A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AR5R9M69MK;
-				INFOPLIST_FILE = ErisUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Eris;
-			};
-			name = Debug;
-		};
-		46DE2D1D25E96CAC00C5A7A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AR5R9M69MK;
-				INFOPLIST_FILE = ErisUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shinnx.ErisUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Eris;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -906,15 +794,6 @@
 			buildConfigurations = (
 				46DE2D1925E96CAC00C5A7A6 /* Debug */,
 				46DE2D1A25E96CAC00C5A7A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		46DE2D1B25E96CAC00C5A7A6 /* Build configuration list for PBXNativeTarget "ErisUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46DE2D1C25E96CAC00C5A7A6 /* Debug */,
-				46DE2D1D25E96CAC00C5A7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
