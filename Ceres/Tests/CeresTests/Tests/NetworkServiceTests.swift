@@ -34,7 +34,7 @@ final class NetworkServiceTests: XCTestCase {
     }
     
     func testNetwork_Failure() {
-        session.statusCode = nil
+        session.statusCode = 401
         session.data = nil
         
         expectation { exp in
@@ -44,6 +44,7 @@ final class NetworkServiceTests: XCTestCase {
                         XCTAssertNil(response)
                     case .failure(let error):
                         XCTAssertNotNil(error)
+                        XCTAssertEqual(error as! NetworkResponseError, NetworkResponseError.authenticationError)
                 }
                 
                 exp.fulfill()
