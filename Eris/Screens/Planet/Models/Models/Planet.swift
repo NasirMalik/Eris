@@ -5,7 +5,11 @@
 import Foundation
 import CoreData
 
-final class Planet: NSManagedObject, Decodable {
+final class Planet: NSManagedObject {
+    // CoreData Generated Model
+}
+
+extension Planet: Decodable {
     enum CodingKeys: CodingKey {
         case name
         case rotationPeriod
@@ -20,7 +24,7 @@ final class Planet: NSManagedObject, Decodable {
         case url
     }
     
-    required convenience init(from decoder: Decoder) throws {
+    convenience init(from decoder: Decoder) throws {
         let context = CoreDataService.shared.mainContext
         self.init(context: context)
         

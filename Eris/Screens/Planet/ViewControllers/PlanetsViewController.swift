@@ -13,12 +13,15 @@ enum ViewControllerState {
 }
 
 final class PlanetsViewController: UIViewController {
+   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    var refreshControl: UIRefreshControl!
     var viewModel: PlanetsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRefreshControl()
         title = LocalizationConstants.pageTitle.rawValue
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
@@ -50,6 +53,7 @@ extension PlanetsViewController: UITableViewDataSource {
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
     func reloadData(state: ViewControllerState) {
+        refreshControl.endRefreshing()
         switch state {
             case .loading:
                 self.activity.startAnimating()
@@ -62,3 +66,16 @@ extension PlanetsViewController: PlanetsViewModelDelegate {
     }
 }
 
+private extension PlanetsViewController {
+    
+    @objc func refresh(_ sender: AnyObject) {
+        viewModel.loadData()
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: LocalizationConstants.refreshTitle.rawValue)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+}

@@ -20,7 +20,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     
     // TODO: initialize properly from
     // networkCheck.currentStatus
-    var networkAvailable: Bool = false
+    var networkAvailable: Bool = true
     
     init(interactor: PlanetsInteractor,
          persistor: CoreDataService,

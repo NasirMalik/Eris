@@ -35,8 +35,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
         repository.getPlanets { [weak self] result in
             switch result {
                 case .success(let response):
-                    // TODO: Handle duplicate data case
-                    self?.planets.append(contentsOf: self?.makeViewData(planets: response) ?? [])
+                    self?.append(response)
                     self?.delegate?.reloadData(state: .success)
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -49,6 +48,15 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
 
 // MARK: Mapping
 private extension PlanetsViewModelImpl {
+    
+    func append(_ response: [Planet]) {
+        let viewDataObjects = makeViewData(planets: response)
+        viewDataObjects.forEach {
+            if !planets.contains($0) {
+                planets.append($0)
+            }
+        }
+    }
     
     func makeViewData(planets: [Planet]) -> [PlanetsViewData] {
         var viewDatas = [PlanetsViewData]()

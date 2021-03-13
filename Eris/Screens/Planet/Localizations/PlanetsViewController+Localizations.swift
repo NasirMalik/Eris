@@ -7,5 +7,6 @@ import Foundation
 extension PlanetsViewController {
     enum LocalizationConstants: String {
         case pageTitle = "Planets"
+        case refreshTitle = "Pull to Refresh"
     }
 }
