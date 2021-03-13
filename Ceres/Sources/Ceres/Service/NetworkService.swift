@@ -29,7 +29,10 @@ public final class NetworkServiceImpl<EndPoint: EndPointType>: NetworkService {
         do {
             let request = try buildRequest(from: route)
             let task = session.dataTask(with: request) { data, response, error in
-                completion(ReponseHandler.handle(data, response, error))
+                let mappedResponse: ResultWithError<Model> = ReponseHandler.handle(data, response, error)
+                DispatchQueue.main.async {
+                    completion(mappedResponse)
+                }                
             }
             
             task.resume()

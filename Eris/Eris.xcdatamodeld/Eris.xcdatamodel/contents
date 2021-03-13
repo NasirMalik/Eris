@@ -8,13 +8,12 @@
         <attribute name="gravity" attributeType="String" defaultValueString=""/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="orbitalPeriod" attributeType="String" defaultValueString=""/>
-        <attribute name="population" attributeType="String" defaultValueString=""/>
         <attribute name="rotationPeriod" attributeType="String" defaultValueString=""/>
         <attribute name="surfaceWater" attributeType="String" defaultValueString=""/>
         <attribute name="terrain" attributeType="String" defaultValueString=""/>
         <attribute name="url" attributeType="String" defaultValueString=""/>
     </entity>
     <elements>
-        <element name="Planet" positionX="-54" positionY="-9" width="128" height="223"/>
+        <element name="Planet" positionX="-54" positionY="-9" width="128" height="208"/>
     </elements>
 </model>

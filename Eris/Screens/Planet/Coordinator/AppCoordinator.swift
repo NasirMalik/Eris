@@ -6,16 +6,25 @@ import Foundation
 import UIKit
 
 final class AppCoordinator: Coordinator {
-    let window: UIWindow
-    let navigationController: UINavigationController
     
-    init(window: UIWindow) {
+    private let window: UIWindow
+    private let navigationController: UINavigationController
+    private let persistorService: CoreDataService
+    private let networkService: NetworkCheckService
+    
+    init(window: UIWindow,
+         networkCheckService: NetworkCheckService,
+         persistorService: CoreDataService) {
         self.window = window
+        self.persistorService = persistorService
+        self.networkService = networkCheckService
         navigationController = UINavigationController()
     }
     
     func start() {
-        let viewController = PlanetsViewController.make(completion: { [weak self] _ in
+        let viewController = Factory.make(networkCheckService: networkService,
+                                          persistorService: persistorService,
+                                          completion: { [weak self] _ in
             self?.onComplete()
         })
         navigationController.viewControllers = [viewController]

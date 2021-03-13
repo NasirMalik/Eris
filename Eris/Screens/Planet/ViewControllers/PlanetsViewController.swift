@@ -16,7 +16,6 @@ final class PlanetsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     var viewModel: PlanetsViewModel!
-    var mapper: PlanetsViewModelMapper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +40,7 @@ extension PlanetsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let planet = viewModel.planets[indexPath.row]
-        // TODO: move data mapping to viewModel
-        let viewData = mapper.map(model: planet)
+        let viewData = viewModel.planets[indexPath.row]
         cell.configure(with: viewData)
         
         return cell
@@ -53,16 +50,14 @@ extension PlanetsViewController: UITableViewDataSource {
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
     func reloadData(state: ViewControllerState) {
-        DispatchQueue.main.async {
-            switch state {
-                case .loading:
-                    self.activity.startAnimating()
-                case .error:
-                    self.activity.stopAnimating()
-                case .success:
-                    self.activity.stopAnimating()
-                    self.tableView.reloadData()
-            }
+        switch state {
+            case .loading:
+                self.activity.startAnimating()
+            case .error:
+                self.activity.stopAnimating()
+            case .success:
+                self.activity.stopAnimating()
+                self.tableView.reloadData()
         }
     }
 }

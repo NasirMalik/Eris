@@ -10,10 +10,6 @@ final class PlanetsViewModelMapperTests: XCTestCase {
     
     var sut: PlanetsViewModelMapper!
     
-    override class func setUp() {
-        super.setUp()
-    }
-    
     func testMap() {
         let planet = StubModelFactory.modelPlanetObject()
         

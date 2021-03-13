@@ -8,11 +8,17 @@ import XCTest
 
 final class PlanetsViewModelTests: XCTestCase {
     
-    func testLoadData() {
-        let repository = PlanetsRepositoryMock()
-        let sut = PlanetsViewModelImpl(resository: repository,
+    var repository: PlanetsRepositoryMock!
+    var sut: PlanetsViewModel!
+    
+    override func setUp() {
+        super.setUp()
+        self.repository = PlanetsRepositoryMock()
+        self.sut = PlanetsViewModelImpl(resository: repository,
                                        onCompletion: { _ in })
-        
+    }
+    
+    func testLoadData() {
         let planet = StubModelFactory.modelPlanetObject()
         repository.result = .success([planet])
         

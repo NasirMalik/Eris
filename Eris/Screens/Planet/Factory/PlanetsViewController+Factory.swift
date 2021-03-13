@@ -5,27 +5,25 @@
 import Foundation
 import UIKit
 
-extension PlanetsViewController {
-    static func make(completion: @escaping (Planet) -> Void ) -> UIViewController {
+struct Factory {
+    
+    static func make(networkCheckService: NetworkCheckService,
+                     persistorService: CoreDataService,
+                     completion: @escaping (Planet) -> Void ) -> UIViewController {
         
         let interactor = PlanetsInteractorImpl()
-        let persistor = CoreDataService.shared
-        let networkCheck = NetworkCheckService.shared
         
         let respository = PlanetsRepositoryImpl(interactor: interactor,
-                                                persistor: persistor,
-                                                networkCheck: networkCheck)
+                                                persistor: persistorService,
+                                                networkCheck: networkCheckService)
         
-        let mapper = PlanetsViewModelMapperImpl()
         let viewModel = PlanetsViewModelImpl(resository: respository,
                                              onCompletion: completion)
         
         let viewController = PlanetsViewController.instantiate(from: .planets)
+        viewController.viewModel = viewModel
         
         viewModel.delegate = viewController
-
-        viewController.viewModel = viewModel
-        viewController.mapper = mapper
         
         return viewController
     }

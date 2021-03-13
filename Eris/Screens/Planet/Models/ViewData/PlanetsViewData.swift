@@ -6,16 +6,7 @@ import Foundation
 
 struct PlanetsViewData {
     let name: String
-    let rotationPeriod: String
-    let orbitalPeriod: String
-    let diameter: String
-    let climate: String
-    let gravity: String
     let terrain: String
-    let surfaceWater: String
-    let created: String
-    let edited: String
-    let url: String
     
     var icon: String {
         return String(format: "planet_%d", Int.random(in: 0...11))
