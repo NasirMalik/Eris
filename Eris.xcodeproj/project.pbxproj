@@ -29,7 +29,6 @@
 		46D1B33D25F912E70050005B /* PlanetsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B33C25F912E70050005B /* PlanetsViewModelTests.swift */; };
 		46D1B34425F914410050005B /* PlanetsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B34325F914410050005B /* PlanetsRepositoryMock.swift */; };
 		46D1B34C25F917A10050005B /* PlanetsInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B34B25F917A10050005B /* PlanetsInteractorMock.swift */; };
-		46D1B35225F918050050005B /* PlanetsViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B35125F918050050005B /* PlanetsViewModelMapperTests.swift */; };
 		46D1B35925F920A40050005B /* StubModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B35825F920A40050005B /* StubModelFactory.swift */; };
 		46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46DE2CF425E96CAA00C5A7A6 /* Eris.xcdatamodeld */; };
 		46DE2CF825E96CAB00C5A7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DE2CF725E96CAB00C5A7A6 /* Assets.xcassets */; };
@@ -76,7 +75,6 @@
 		46D1B33C25F912E70050005B /* PlanetsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModelTests.swift; sourceTree = "<group>"; };
 		46D1B34325F914410050005B /* PlanetsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRepositoryMock.swift; sourceTree = "<group>"; };
 		46D1B34B25F917A10050005B /* PlanetsInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsInteractorMock.swift; sourceTree = "<group>"; };
-		46D1B35125F918050050005B /* PlanetsViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModelMapperTests.swift; sourceTree = "<group>"; };
 		46D1B35825F920A40050005B /* StubModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubModelFactory.swift; sourceTree = "<group>"; };
 		46DE2CE825E96CAA00C5A7A6 /* Eris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DE2CF525E96CAA00C5A7A6 /* Eris.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eris.xcdatamodel; sourceTree = "<group>"; };
@@ -422,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				46D1B33C25F912E70050005B /* PlanetsViewModelTests.swift */,
-				46D1B35125F918050050005B /* PlanetsViewModelMapperTests.swift */,
 				460A4AD325FD0DC2003F7800 /* PlanetsRepositoryTests.swift */,
 			);
 			path = ViewModels;
@@ -577,7 +574,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46D1B35225F918050050005B /* PlanetsViewModelMapperTests.swift in Sources */,
 				46FE549925F9416700B0D996 /* String+Decodable.swift in Sources */,
 				46D1B35925F920A40050005B /* StubModelFactory.swift in Sources */,
 				46D1B33D25F912E70050005B /* PlanetsViewModelTests.swift in Sources */,
