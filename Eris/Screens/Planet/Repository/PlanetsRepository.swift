@@ -18,9 +18,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     private let persistor: CoreDataService
     private var networkCheck: NetworkCheckService
     
-    // TODO: initialize properly from
-    // networkCheck.currentStatus
-    var networkAvailable: Bool = true
+    var networkAvailable: Bool?
     
     init(interactor: PlanetsInteractor,
          persistor: CoreDataService,
@@ -33,7 +31,8 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     }
     
     func getPlanets(_ completion: @escaping FetchCompletion) {
-        if networkAvailable {
+        if let internetPresent = networkAvailable,
+           internetPresent == true {
             interactorFetch(completion)
         } else {
             persistorFetch(completion)
@@ -71,7 +70,10 @@ private extension PlanetsRepositoryImpl {
     }
     
 }
-
+/*
+ Due to bug in Simulator API, NWPath.Status will never return .satisfied while testing on simulator,
+ If network was turned off and then turned on.
+ */
 extension PlanetsRepositoryImpl: NetworkCheckObserver {
     func statusDidChange(status: NWPath.Status) {
         if status == .satisfied {

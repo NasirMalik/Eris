@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordiantor = AppCoordinator(window: window!,
-                                        networkCheckService: NetworkCheckService.shared,
+                                        networkCheckService: NetworkCheckService(),
                                         persistorService: CoreDataService())
         appCoordiantor.start()
         

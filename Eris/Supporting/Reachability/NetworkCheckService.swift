@@ -15,16 +15,17 @@ final class NetworkCheckService {
         weak var observer: NetworkCheckObserver?
     }
     
-    static let shared = NetworkCheckService()
     private var monitor = NWPathMonitor()
+    private var queue = DispatchQueue(label: "Monitor")
     private var observations = [ObjectIdentifier: NetworkChangeObservation]()
+    
     var currentStatus: NWPath.Status {
         get {
             return monitor.currentPath.status
         }
     }
     
-    private init() {
+    init() {
         monitor.pathUpdateHandler = { [unowned self] path in
             for (id, observations) in self.observations {
                 guard let observer = observations.observer else {
@@ -32,12 +33,12 @@ final class NetworkCheckService {
                     continue
                 }
                 
-                DispatchQueue.main.async(execute: {
+                DispatchQueue.main.async {
                     observer.statusDidChange(status: path.status)
-                })
+                }
             }
         }
-        monitor.start(queue: DispatchQueue.global(qos: .background))
+        monitor.start(queue: queue)
     }
     
     func addObserver(observer: NetworkCheckObserver) {

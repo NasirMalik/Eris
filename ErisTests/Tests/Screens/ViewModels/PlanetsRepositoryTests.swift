@@ -19,7 +19,7 @@ final class PlanetsRepositoryTests: XCTestCase {
         
         sut = PlanetsRepositoryImpl(interactor: interactor,
                                     persistor: coreDataService,
-                                    networkCheck: NetworkCheckService.shared)
+                                    networkCheck: NetworkCheckService())
     }
     
     func testDataFetchWithNetwork() {
