@@ -11,7 +11,7 @@ extension CoreDataService {
      Should be done on main Thread
      */
     func fetchPlanets(completion: (Result<[Planet], Error>) -> Void) {
-        let context = CoreDataService.shared.mainContext
+        let context = mainContext
         let request: NSFetchRequest<Planet> = Planet.fetchRequest()
         
         do {
@@ -27,21 +27,10 @@ extension CoreDataService {
      Should be done on background Thread
      */
     func savePlanets(planets: [Planet]) throws {
-        let context = CoreDataService.shared.backgroundContext()
+        let context = backgroundContext
         planets.forEach {
             if let name = $0.name, fetchPlanet(name: name) == nil {
-                let planet = Planet(entity: $0.entity, insertInto: context)
-                planet.name = $0.name
-                planet.terrain = $0.terrain
-                planet.rotationPeriod = $0.rotationPeriod
-                planet.orbitalPeriod = $0.orbitalPeriod
-                planet.diameter = $0.diameter
-                planet.climate = $0.climate
-                planet.gravity = $0.gravity
-                planet.surfaceWater = $0.surfaceWater
-                planet.created = $0.created
-                planet.edited = $0.edited
-                planet.url = $0.url
+                _ = Planet(object: $0, context: context)
             }
         }
         
@@ -56,7 +45,7 @@ extension CoreDataService {
 
 private extension CoreDataService {
     func fetchPlanet(name: String) -> Planet? {
-        let context = CoreDataService.shared.backgroundContext()
+        let context = backgroundContext
         // TODO: This operation should include timestamp to have most recent data in persistence, from a changing source
         let predicate = NSPredicate(format: "name == %@", name)
         

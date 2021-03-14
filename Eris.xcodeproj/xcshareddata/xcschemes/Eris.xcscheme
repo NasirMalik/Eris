@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Eris.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CeresTests"
+               BuildableName = "CeresTests"
+               BlueprintName = "CeresTests"
+               ReferencedContainer = "container:Ceres">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

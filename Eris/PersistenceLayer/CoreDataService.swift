@@ -5,22 +5,33 @@
 import Foundation
 import CoreData
 
+enum StorageType {
+    case persistent, inMemory
+}
+
 final class CoreDataService {
-    /*
-     Should not be used as singelton but properly injected
-     */
-    static let shared = CoreDataService()
     
-    private init() {}
+    static var instance: CoreDataService!
+        
+    private let persistentContainer: NSPersistentContainer
     
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Eris")
-        container.loadPersistentStores(completionHandler: { _, error in
-            _ = error.map { fatalError("Unresolved error \($0)") }
+    init(_ storageType: StorageType = .persistent) {
+        self.persistentContainer = NSPersistentContainer(name: "Eris")
+        
+        if storageType == .inMemory {
+            let description = NSPersistentStoreDescription()
+            description.url = URL(fileURLWithPath: "/dev/null")
+            self.persistentContainer.persistentStoreDescriptions = [description]
+        }
+        
+        self.persistentContainer.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
         })
         
-        return container
-    }()
+        CoreDataService.instance = self
+    }
     
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
@@ -29,7 +40,7 @@ final class CoreDataService {
     /*
      To be used for long running data saving operation
      */
-    func backgroundContext() -> NSManagedObjectContext {
+    var backgroundContext: NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()
     }
 }

@@ -24,7 +24,7 @@ final class NetworkCheckService {
         }
     }
     
-    init() {
+    private init() {
         monitor.pathUpdateHandler = { [unowned self] path in
             for (id, observations) in self.observations {
                 guard let observer = observations.observer else {

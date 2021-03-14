@@ -7,6 +7,20 @@ import CoreData
 
 final class Planet: NSManagedObject {
     // CoreData Generated Model
+    convenience init(object: Planet, context: NSManagedObjectContext) {
+        self.init(entity: object.entity, insertInto: context)
+        self.name = object.name
+        self.terrain = object.terrain
+        self.rotationPeriod = object.rotationPeriod
+        self.orbitalPeriod = object.orbitalPeriod
+        self.diameter = object.diameter
+        self.climate = object.climate
+        self.gravity = object.gravity
+        self.surfaceWater = object.surfaceWater
+        self.created = object.created
+        self.edited = object.edited
+        self.url = object.url
+    }
 }
 
 extension Planet: Decodable {
@@ -25,7 +39,7 @@ extension Planet: Decodable {
     }
     
     convenience init(from decoder: Decoder) throws {
-        let context = CoreDataService.shared.mainContext
+        let context = CoreDataService.instance.mainContext
         self.init(context: context)
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
