@@ -5,7 +5,7 @@
 import Foundation
 import UIKit
 
-struct Factory {
+struct UIViewControllerFactory {
     
     static func make(networkCheckService: NetworkCheckService,
                      persistorService: CoreDataService,

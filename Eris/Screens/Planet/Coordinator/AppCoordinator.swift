@@ -22,7 +22,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = Factory.make(networkCheckService: networkService,
+        let viewController = UIViewControllerFactory.make(networkCheckService: networkService,
                                           persistorService: persistorService,
                                           completion: { [weak self] _ in
             self?.onComplete()

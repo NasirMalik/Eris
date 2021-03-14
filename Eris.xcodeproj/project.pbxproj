@@ -14,7 +14,7 @@
 		460A4AD825FD17DA003F7800 /* XCTestCase+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A4AD725FD17DA003F7800 /* XCTestCase+Additions.swift */; };
 		463AFADE25EA552400F2786F /* Ceres in Frameworks */ = {isa = PBXBuildFile; productRef = 463AFADD25EA552400F2786F /* Ceres */; };
 		463AFAE625EA8F5700F2786F /* PlanetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */; };
-		46D1B12525F4C8E60050005B /* PlanetsViewController+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B12425F4C8E60050005B /* PlanetsViewController+Factory.swift */; };
+		46D1B12525F4C8E60050005B /* UIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B12425F4C8E60050005B /* UIViewControllerFactory.swift */; };
 		46D1B12E25F4CBC60050005B /* PlanetsViewController+Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B12D25F4CBC60050005B /* PlanetsViewController+Localizations.swift */; };
 		46D1B15925F4D3BB0050005B /* PlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15625F4D3BB0050005B /* PlanetResponse.swift */; };
 		46D1B15F25F4D3C90050005B /* PlanetsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1B15E25F4D3C90050005B /* PlanetsViewData.swift */; };
@@ -60,7 +60,7 @@
 		460A4AD725FD17DA003F7800 /* XCTestCase+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Additions.swift"; sourceTree = "<group>"; };
 		463AFAD825EA544700F2786F /* Ceres */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ceres; sourceTree = "<group>"; };
 		463AFAE525EA8F5700F2786F /* PlanetsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsAPI.swift; sourceTree = "<group>"; };
-		46D1B12425F4C8E60050005B /* PlanetsViewController+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlanetsViewController+Factory.swift"; sourceTree = "<group>"; };
+		46D1B12425F4C8E60050005B /* UIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerFactory.swift; sourceTree = "<group>"; };
 		46D1B12D25F4CBC60050005B /* PlanetsViewController+Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlanetsViewController+Localizations.swift"; sourceTree = "<group>"; };
 		46D1B15625F4D3BB0050005B /* PlanetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetResponse.swift; sourceTree = "<group>"; };
 		46D1B15725F4D3BB0050005B /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		46D1B12325F4C8D70050005B /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				46D1B12425F4C8E60050005B /* PlanetsViewController+Factory.swift */,
+				46D1B12425F4C8E60050005B /* UIViewControllerFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 				46D1B15925F4D3BB0050005B /* PlanetResponse.swift in Sources */,
 				46DE2D5E25E98B9C00C5A7A6 /* PlanetsInteractor.swift in Sources */,
 				46D1B19E25F5788D0050005B /* CoreDataService.swift in Sources */,
-				46D1B12525F4C8E60050005B /* PlanetsViewController+Factory.swift in Sources */,
+				46D1B12525F4C8E60050005B /* UIViewControllerFactory.swift in Sources */,
 				46D1B17D25F4D4920050005B /* UIView+Reuseable.swift in Sources */,
 				46DE2CF625E96CAA00C5A7A6 /* Eris.xcdatamodeld in Sources */,
 				46DE2D4025E98A0400C5A7A6 /* PlanetsViewModel.swift in Sources */,

@@ -18,7 +18,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     private let persistor: CoreDataService
     private var networkCheck: NetworkCheckService
     
-    var networkAvailable: Bool?
+    var networkAvailable: Bool!
     
     init(interactor: PlanetsInteractor,
          persistor: CoreDataService,
@@ -28,11 +28,11 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
         self.networkCheck = networkCheck
         
         networkCheck.addObserver(observer: self)
+        networkAvailable = networkCheck.currentStatus == .satisfied
     }
     
     func getPlanets(_ completion: @escaping FetchCompletion) {
-        if let internetPresent = networkAvailable,
-           internetPresent == true {
+        if networkAvailable {
             interactorFetch(completion)
         } else {
             persistorFetch(completion)
