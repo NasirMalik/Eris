@@ -1,5 +1,7 @@
 # Ceres
 
+Name `Ceres` is inspired from [here](https://solarsystem.nasa.gov/planets/dwarf-planets/ceres)
+
 ## Network Layer Module
 Network layer module shows how small, independently testable modules using SPM can be a great idea to moduleraize applicaitions. 
 
