@@ -11,21 +11,21 @@ Architecture is divided in the following independently injectable and testable l
 Layers are defined here. 
 
 ### Coordinator
-    Application Screenflow and later Push Routing handler.
+Application Screenflow and later Push Routing handler.
 ### View
-    Display of data. Data is being displayed in the form of Models and views confrom to ModelConfigurable to populate data via `configure(model:)` method
+Display of data. Data is being displayed in the form of Models and views confrom to ModelConfigurable to populate data via `configure(model:)` method
 ### ViewController
-    Controller contains logic of view's state representation and pass actions to viewModel
+Controller contains logic of view's state representation and pass actions to viewModel
 ### ViewModel
-    - ViewModel does all the business logic implementation with or without help of mappers.
-    - Also it informs view-controller about the state update via bindings. 
-    - Mapper are the Domain Usecases. Any domain logic will be injected in the form of independently tested usecases. Idea is to keep Domain-Layer independent from ViewModels thus can be widely reuseable. Current implementation doesn't contain any domain logic thus doesn't contain any mapper.
+- ViewModel does all the business logic implementation with or without help of mappers.
+- Also it informs view-controller about the state update via `bindings`. 
+- Mapper are the `Domain Usecases`. Any domain logic will be injected in the form of independently tested usecases. Idea is to keep `Domain-Layer` independent from ViewModels thus can be `widely reuseable`. Current implementation doesn't contain any domain logic thus doesn't contain any mapper.
 ### Repository
-    Its an abstraction layer between ViewModel and Data Stores that encapuslates Data-source layer. Currently there are two data sources, Network and CoreData. This layer can encapulate further data sources aswel i-e Remote Configurations etc
+Its an `abstraction layer` between `ViewModel` and `Data Stores` that encapuslates Data-source layer. Currently there are two data sources, Network and CoreData. This layer can encapulate further data sources aswel i-e Remote Configurations etc
 ### Interactor
-    Network: Its a wrapper written on top of Swift Package `Ceres` which fetch and decode data into inferred model object. 
+Network: Its a wrapper written on top of Swift Package `Ceres` which fetch and decode data into inferred model object. 
 ### Persistor
-    CoreData: Persistor encapsulates CoreData and fetches and updates data.
+CoreData: Persistor encapsulates CoreData and fetches and updates data.
         
 ## Considerations
 
