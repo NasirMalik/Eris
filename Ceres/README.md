@@ -28,4 +28,4 @@ Request method should infer to `Model: Decodable`
 - This Module was just created to demonstrate lighweight testable component based architecture, thus not endorsed for real usage as it lacks Queue based architecture and may not be able to scale well. 
 
 ## Cedits
-https://medium.com/flawless-app-stories/writing-network-layer-in-swift-protocol-oriented-approach-4fa40ef1f908
+[Medium Article](https://medium.com/flawless-app-stories/writing-network-layer-in-swift-protocol-oriented-approach-4fa40ef1f908)
