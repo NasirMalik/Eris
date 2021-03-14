@@ -32,9 +32,9 @@ final class PlanetsViewModelTests: XCTestCase {
 
 private extension PlanetsViewModelTests {
     
-    func makePlanetViewData() -> (Planet, PlanetsViewData) {
+    func makePlanetViewData() -> (Planet, PlanetViewData) {
         let planet = StubModelFactory.modelPlanetObject()
-        let viewData = PlanetsViewData.init(name: planet.name!.uppercased(),
+        let viewData = PlanetViewData.init(name: planet.name!.uppercased(),
                                             terrain: planet.terrain!.capitalized)
         return (planet, viewData)
     }

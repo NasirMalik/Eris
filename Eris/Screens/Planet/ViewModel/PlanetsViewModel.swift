@@ -9,7 +9,7 @@ protocol PlanetsViewModelDelegate: class {
 }
 
 protocol PlanetsViewModel {
-    var planets: [PlanetsViewData] { get }
+    var planets: [PlanetViewData] { get }
     func loadData()
 }
 
@@ -22,7 +22,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
 
     weak var delegate: PlanetsViewModelDelegate?
     
-    var planets = [PlanetsViewData]()
+    var planets = [PlanetViewData]()
     
     init(resository: PlanetsRepository,
          onCompletion: @escaping Completion) {
@@ -58,8 +58,8 @@ private extension PlanetsViewModelImpl {
         }
     }
     
-    func makeViewData(planets: [Planet]) -> [PlanetsViewData] {
-        var viewDatas = [PlanetsViewData]()
+    func makeViewData(planets: [Planet]) -> [PlanetViewData] {
+        var viewDatas = [PlanetViewData]()
         planets.forEach {
             if let viewData = map(model: $0) {
                 viewDatas.append(viewData)
@@ -68,7 +68,7 @@ private extension PlanetsViewModelImpl {
         return viewDatas
     }
     
-    func map(model: Planet) -> PlanetsViewData? {
+    func map(model: Planet) -> PlanetViewData? {
         
         guard let name = model.name else {
             return nil

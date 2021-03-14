@@ -14,7 +14,7 @@ class PlanetsTableViewCell: UITableViewCell {
 }
 
 extension PlanetsTableViewCell: ModelConfigurable {
-    func configure(with model: PlanetsViewData) {
+    func configure(with model: PlanetViewData) {
         name.text = model.name
         detail.text = model.terrain
         icon.image = UIImage(named: model.icon)

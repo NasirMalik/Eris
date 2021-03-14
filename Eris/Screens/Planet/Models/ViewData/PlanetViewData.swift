@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct PlanetsViewData: Equatable {
+struct PlanetViewData: Equatable {
     let name: String
     let terrain: String
     
