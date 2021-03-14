@@ -16,7 +16,7 @@ final class PlanetsViewController: UIViewController {
    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
-    var refreshControl: UIRefreshControl!
+    private var refreshControl: UIRefreshControl!
     var viewModel: PlanetsViewModel!
     
     override func viewDidLoad() {
@@ -27,8 +27,8 @@ final class PlanetsViewController: UIViewController {
         tableView.estimatedRowHeight = 90
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         viewModel.loadData()
     }
 }

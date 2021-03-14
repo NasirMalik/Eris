@@ -3,6 +3,9 @@
 //
 
 import Foundation
+/*
+    All views, which needs to be populated from a model should be ModelConfigurable
+ */
 
 protocol ModelConfigurable {
     associatedtype Model

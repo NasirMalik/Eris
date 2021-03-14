@@ -13,12 +13,3 @@ extension JSONDecoder {
         return decoder
     }()
 }
-
-extension String {
-
-    func modelByDecodingJSON<T: Decodable>() throws -> T {
-        let encodedString = data(using: .utf8)!
-        return try JSONDecoder.defaultDecoder.decode(T.self, from: encodedString)
-    }
-
-}

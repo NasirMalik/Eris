@@ -36,7 +36,7 @@ final class CoreDataService {
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    
+     
     /*
      To be used for long running data saving operation
      */
