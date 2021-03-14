@@ -14,9 +14,9 @@ protocol PlanetsRepository {
 
 final class PlanetsRepositoryImpl: PlanetsRepository {
     
-    let interactor: PlanetsInteractor
-    let persistor: CoreDataService
-    var networkCheck: NetworkCheckService
+    private let interactor: PlanetsInteractor
+    private let persistor: CoreDataService
+    private var networkCheck: NetworkCheckService
     
     // TODO: initialize properly from
     // networkCheck.currentStatus
@@ -58,8 +58,12 @@ private extension PlanetsRepositoryImpl {
         interactor.getPlanets(completion: { result in
             switch result {
                 case .success(let response):
-                    try! self.persistor.savePlanets(planets: response.planets)
-                    completion(.success(response.planets))
+                    do {
+                        try self.persistor.savePlanets(planets: response.planets)
+                        completion(.success(response.planets))
+                    } catch(let error) {
+                        completion(.failure(error))
+                    }
                 case .failure(let error):
                     completion(.failure(error))
             }
