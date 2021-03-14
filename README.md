@@ -2,11 +2,9 @@
 
 Name `Eris` is inspired from [here](https://solarsystem.nasa.gov/planets/dwarf-planets/eris)
 
-Architecture is divided in the following independently injectable and testable layers. 
-
 ## Architecture
 
-Layers are defined here. 
+Architecture is divided in the following independently injectable and testable layers.  Layers are defined here. 
 
 ### Coordinator
     Application Screenflow and later Push Routing handler.
