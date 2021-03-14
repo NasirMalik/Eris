@@ -4,7 +4,7 @@ Name `Eris` is inspired from [here](https://solarsystem.nasa.gov/planets/dwarf-p
 
 Architecture is divided in the following independently injectable and testable layers. 
 
-## iOS-Architecture Reference 
+## Architecture
 
 Layers are defined here. 
 
@@ -21,7 +21,7 @@ Layers are defined here.
 ### Repository
     Its an abstraction layer between ViewModel and Data Stores that encapuslates Data-source layer. Currently there are two data sources, Network and CoreData. This layer can encapulate further data sources aswel i-e Remote Configurations etc
 ### Interactor
-    Network: Its a wrapper written as a Swift Package `Ceres` and fetch and decode data from internet. 
+    Network: Its a wrapper written on top of Swift Package `Ceres` which fetch and decode data into inferred model object. 
 ### Persistor
     CoreData: Persistor encapsulates CoreData and fetches and updates data.
         
