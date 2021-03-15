@@ -9,6 +9,7 @@ public enum NetworkError: Error {
     case serializationError
     case missingURL
     
+    // TODO: Add localization Constants
     var localizedDescription: String {
         switch self {
             case .parametersNil: return "Parameters were nil."

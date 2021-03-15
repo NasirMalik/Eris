@@ -16,7 +16,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     
     private let interactor: PlanetsInteractor
     private let persistor: CoreDataService
-    private var networkCheck: NetworkCheckService
+    private let networkCheck: NetworkCheckService
     
     var networkAvailable: Bool!
     
@@ -48,7 +48,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
 private extension PlanetsRepositoryImpl {
     
     func persistorFetch(_ completion: @escaping FetchCompletion) {
-        persistor.fetchPlanets { (result) in
+        persistor.fetchPlanets { result in
             completion(result)
         }
     }

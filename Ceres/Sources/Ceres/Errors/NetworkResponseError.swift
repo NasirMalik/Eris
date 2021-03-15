@@ -13,6 +13,7 @@ public enum NetworkResponseError: Error {
     case unableToDecode
     case httpURLResponseCastFailed
     
+    // TODO: Add localization Constants
     var localizedDescription: String {
         switch self {
         case .authenticationError: return "You need to be authenticated first."
