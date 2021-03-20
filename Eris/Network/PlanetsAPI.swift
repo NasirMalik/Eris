@@ -6,7 +6,7 @@ import Foundation
 import Ceres
 
 enum PlanetsAPI {
-    case getPlanets
+    case getPlanets(Int)
 }
 
 extension PlanetsAPI: EndPointType {
@@ -30,8 +30,10 @@ extension PlanetsAPI: EndPointType {
 
     var task: HTTPTask {
         switch self {
-        case .getPlanets:
-            return .requestParameters(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: [:])
+        case .getPlanets(let page):
+            return .requestParameters(bodyParameters: nil,
+                                      bodyEncoding: .urlEncoding,
+                                      urlParameters: ["page": page])
         }
     }
 

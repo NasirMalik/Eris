@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetsTableViewCell: UITableViewCell {
+final class PlanetsTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var icon: UIImageView!

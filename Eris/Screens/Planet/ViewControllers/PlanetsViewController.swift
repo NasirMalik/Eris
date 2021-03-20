@@ -15,16 +15,14 @@ enum ViewControllerState {
 final class PlanetsViewController: UIViewController {
    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
     private var refreshControl: UIRefreshControl!
-    var viewModel: PlanetsViewModel!
+    var viewModel:  PlanetsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRefreshControl()
+        setupTableView()
         title = LocalizationConstants.pageTitle.rawValue
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 90
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,32 +33,45 @@ final class PlanetsViewController: UIViewController {
 
 extension PlanetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.planets.count
+        return viewModel.showLoadingCell ? viewModel.planets.count + 1 : viewModel.planets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlanetsTableViewCell.reuseIdentifier) as? PlanetsTableViewCell else {
-            return UITableViewCell()
+        if viewModel.isLoadingIndexPath(indexPath),
+           let loadingCell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier) {
+            return loadingCell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PlanetsTableViewCell.reuseIdentifier) as? PlanetsTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            let viewData = viewModel.planets[indexPath.row]
+            cell.configure(with: viewData)
+            
+            return cell
         }
-        
-        let viewData = viewModel.planets[indexPath.row]
-        cell.configure(with: viewData)
-        
-        return cell
+    }
+    
+}
+
+extension PlanetsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard viewModel.isLoadingIndexPath(indexPath) else { return }
+        viewModel.loadData()
     }
     
 }
 
 extension PlanetsViewController: PlanetsViewModelDelegate {
     func reloadData(state: ViewControllerState) {
-        refreshControl.endRefreshing()
         switch state {
             case .loading:
-                self.activity.startAnimating()
+                refreshControl.beginRefreshing()
             case .error:
-                self.activity.stopAnimating()
+                refreshControl.endRefreshing()
             case .success:
-                self.activity.stopAnimating()
+                refreshControl.endRefreshing()
                 self.tableView.reloadData()
         }
     }
@@ -77,5 +88,10 @@ private extension PlanetsViewController {
         refreshControl.attributedTitle = NSAttributedString(string: LocalizationConstants.refreshTitle.rawValue)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
+    }
+    
+    func setupTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 90
     }
 }

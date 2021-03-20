@@ -12,9 +12,11 @@ final class PlanetsInteractorMock: PlanetsInteractor {
     var getPlanetsCallCount = 0
     var getPlanetsCompletionClosure: FetchCompletion?
     var result: Result<Response, Error>?
+    var getPageNumber = 0
     
-    func getPlanets(completion: @escaping FetchCompletion) {
+    func getPlanets(page: Int, completion: @escaping FetchCompletion) {
         getPlanetsCallCount += 1
+        getPageNumber = page
         getPlanetsCompletionClosure = completion
         
         if let result = result {

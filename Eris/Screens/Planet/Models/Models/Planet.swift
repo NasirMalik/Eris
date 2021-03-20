@@ -7,8 +7,9 @@ import CoreData
 
 final class Planet: NSManagedObject {
     // CoreData Generated Model
-    convenience init(object: Planet, context: NSManagedObjectContext) {
+    convenience init(object: Planet, context: NSManagedObjectContext, page: Int64) {
         self.init(entity: object.entity, insertInto: context)
+        self.page = page
         self.name = object.name
         self.terrain = object.terrain
         self.rotationPeriod = object.rotationPeriod
@@ -25,6 +26,7 @@ final class Planet: NSManagedObject {
 
 extension Planet: Decodable {
     enum CodingKeys: CodingKey {
+        case page
         case name
         case rotationPeriod
         case orbitalPeriod

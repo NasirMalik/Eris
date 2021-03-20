@@ -8,15 +8,15 @@ import Ceres
 protocol PlanetsInteractor {
     typealias FetchCompletion = (Result<Response, Error>) -> Void
     
-    func getPlanets(completion: @escaping FetchCompletion)
+    func getPlanets(page: Int, completion: @escaping FetchCompletion)
 }
 
 struct PlanetsInteractorImpl: PlanetsInteractor {
     
     let service = NetworkServiceImpl<PlanetsAPI>()
     
-    func getPlanets(completion: @escaping FetchCompletion) {
-        service.request(.getPlanets) { result in
+    func getPlanets(page: Int, completion: @escaping FetchCompletion) {
+        service.request(.getPlanets(page)) { result in
             completion(result)
         }
     }

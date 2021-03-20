@@ -76,34 +76,46 @@
                                             <outlet property="name" destination="Zgw-TM-u5m" id="9mj-zQ-5JZ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingTableViewCell" id="B0r-Ks-ZgG" customClass="LoadingTableViewCell" customModule="Eris" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="118" width="414" height="36.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B0r-Ks-ZgG" id="qvu-yA-Aju">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="36.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dYt-06-qxe">
+                                                    <rect key="frame" x="197" y="8" width="20" height="20.5"/>
+                                                    <color key="color" systemColor="systemGrayColor"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dYt-06-qxe" firstAttribute="centerY" secondItem="qvu-yA-Aju" secondAttribute="centerY" id="fe5-j4-fU5"/>
+                                                <constraint firstItem="dYt-06-qxe" firstAttribute="top" secondItem="qvu-yA-Aju" secondAttribute="top" constant="8" id="gv7-St-kcZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="dYt-06-qxe" secondAttribute="bottom" constant="8" id="mvw-Ed-tT4"/>
+                                                <constraint firstItem="dYt-06-qxe" firstAttribute="centerX" secondItem="qvu-yA-Aju" secondAttribute="centerX" id="qPA-6n-CQI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activity" destination="dYt-06-qxe" id="fV1-gb-7BH"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="4Re-jv-w0m" id="gr3-Ra-Jfe"/>
                                     <outlet property="delegate" destination="4Re-jv-w0m" id="RY5-QL-EOh"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWG-g1-sX1">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="UJR-le-IvP"/>
-                                    <constraint firstAttribute="width" constant="37" id="Uzh-pn-bTV"/>
-                                </constraints>
-                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iLd-xA-kc6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="top" secondItem="vvp-iv-1UE" secondAttribute="top" id="CiM-d4-lxB"/>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="leading" secondItem="iLd-xA-kc6" secondAttribute="leading" id="GU7-zW-sOW"/>
-                            <constraint firstItem="DWG-g1-sX1" firstAttribute="centerY" secondItem="vvp-iv-1UE" secondAttribute="centerY" id="UVk-YA-bNd"/>
-                            <constraint firstItem="DWG-g1-sX1" firstAttribute="centerX" secondItem="vvp-iv-1UE" secondAttribute="centerX" id="bd9-sc-Ph9"/>
                             <constraint firstAttribute="bottom" secondItem="3i6-eV-wSR" secondAttribute="bottom" id="cQb-b9-8zP"/>
                             <constraint firstItem="3i6-eV-wSR" firstAttribute="trailing" secondItem="iLd-xA-kc6" secondAttribute="trailing" id="g9R-bg-8JY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activity" destination="DWG-g1-sX1" id="qUl-jQ-YVh"/>
                         <outlet property="tableView" destination="3i6-eV-wSR" id="hpQ-uK-bCX"/>
                     </connections>
                 </viewController>
@@ -118,6 +130,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

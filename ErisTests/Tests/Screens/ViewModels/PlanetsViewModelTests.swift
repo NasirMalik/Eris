@@ -24,6 +24,7 @@ final class PlanetsViewModelTests: XCTestCase {
         
         sut.loadData()
         
+        XCTAssertEqual(repository.count, 1)
         XCTAssertEqual(repository.getPlanetsCallCount, 1)
         XCTAssertEqual(sut.planets, [stubPlanet.1])
     }
@@ -40,5 +41,3 @@ private extension PlanetsViewModelTests {
     }
     
 }
-
-

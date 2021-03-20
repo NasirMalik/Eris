@@ -7,9 +7,9 @@ import Network
 
 protocol PlanetsRepository {
     typealias FetchCompletion = (Result<[Planet], Error>) -> Void
+    var count: Int { get }
     
-    func getPlanets(_ completion: @escaping FetchCompletion)
-    
+    func getPlanets(page: Int, completion: @escaping FetchCompletion)
 }
 
 final class PlanetsRepositoryImpl: PlanetsRepository {
@@ -18,6 +18,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     private let persistor: CoreDataService
     private let networkCheck: NetworkCheckService
     
+    var count: Int = Int(INT_MAX)
     var networkAvailable: Bool!
     
     init(interactor: PlanetsInteractor,
@@ -31,11 +32,11 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
         networkAvailable = networkCheck.currentStatus == .satisfied
     }
     
-    func getPlanets(_ completion: @escaping FetchCompletion) {
+    func getPlanets(page: Int, completion: @escaping FetchCompletion) {
         if networkAvailable {
-            interactorFetch(completion)
+            interactorFetch(page: page, completion: completion)
         } else {
-            persistorFetch(completion)
+            persistorFetch(page: page, completion: completion)
         }
     }
     
@@ -47,18 +48,21 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
 
 private extension PlanetsRepositoryImpl {
     
-    func persistorFetch(_ completion: @escaping FetchCompletion) {
-        persistor.fetchPlanets { result in
+    func persistorFetch(page: Int, completion: @escaping FetchCompletion) {
+        
+        count = persistor.getRecordsCount()
+        persistor.fetchPlanets(page: page) { result in
             completion(result)
         }
     }
     
-    func interactorFetch(_ completion: @escaping FetchCompletion) {
-        interactor.getPlanets(completion: { result in
+    func interactorFetch(page: Int, completion: @escaping FetchCompletion) {
+        interactor.getPlanets(page: page, completion: { [weak self] result in
             switch result {
                 case .success(let response):
                     do {
-                        try self.persistor.savePlanets(planets: response.planets)
+                        self?.count = response.count
+                        try self?.persistor.savePlanets(page: page, planets: response.planets)
                         completion(.success(response.planets))
                     } catch(let error) {
                         completion(.failure(error))
