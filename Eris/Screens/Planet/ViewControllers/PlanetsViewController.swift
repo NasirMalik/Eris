@@ -42,6 +42,7 @@ extension PlanetsViewController: UITableViewDataSource {
             return loadingCell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PlanetsTableViewCell.reuseIdentifier) as? PlanetsTableViewCell else {
+                assertionFailure("Should not fall through")
                 return UITableViewCell()
             }
             
@@ -80,6 +81,7 @@ extension PlanetsViewController: PlanetsViewModelDelegate {
             case .loading:
                 refreshControl.beginRefreshing()
             case .error:
+                // TODO: Error handling UI
                 refreshControl.endRefreshing()
             case .success:
                 refreshControl.endRefreshing()

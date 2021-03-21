@@ -18,7 +18,7 @@ final class PlanetsRepositoryImpl: PlanetsRepository {
     private let persistor: CoreDataService
     private let networkCheck: NetworkCheckService
     
-    var count: Int = Int(INT_MAX)
+    var count = Int.max
     var networkAvailable: Bool!
     
     init(interactor: PlanetsInteractor,
