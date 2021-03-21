@@ -13,6 +13,7 @@ protocol PlanetsViewModel {
     var planets: [PlanetViewData] { get }
     
     func loadData()
+    func deleteRow(index: Int)
     func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool
 }
 
@@ -49,6 +50,11 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
             }
         }
     
+    }
+    
+    func deleteRow(index: Int) {
+        // TODO: remove from CoreData
+        planets.remove(at: index)
     }
     
     func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {

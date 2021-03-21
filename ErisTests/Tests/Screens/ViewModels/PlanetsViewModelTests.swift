@@ -29,6 +29,17 @@ final class PlanetsViewModelTests: XCTestCase {
         XCTAssertEqual(sut.planets, [stubPlanet.1])
     }
     
+    func testDeleteData() {
+        let stubPlanet = makePlanetViewData()
+        repository.result = .success([stubPlanet.0])
+        sut.loadData()
+        
+        sut.deleteRow(index: 0)
+        
+        XCTAssertEqual(repository.count, 1)
+        XCTAssertEqual(sut.planets.count, 0)
+    }
+    
 }
 
 private extension PlanetsViewModelTests {
