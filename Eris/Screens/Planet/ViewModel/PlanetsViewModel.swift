@@ -9,7 +9,7 @@ protocol PlanetsViewModelDelegate: class {
 }
 
 protocol PlanetsViewModel {
-    var showLoadingCell: Bool { get }
+    var shouldShowLoadingCell: Bool { get }
     var planets: [PlanetViewData] { get }
     
     func loadData()
@@ -25,7 +25,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
 
     weak var delegate: PlanetsViewModelDelegate?
     
-    var showLoadingCell: Bool = false
+    var shouldShowLoadingCell: Bool = false
     var planets = [PlanetViewData]()
     var currentPage = 1
     
@@ -44,7 +44,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
                     self?.delegate?.reloadData(state: .success)
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self?.showLoadingCell = false
+                    self?.shouldShowLoadingCell = false
                     self?.delegate?.reloadData(state: .error)
             }
         }
@@ -52,7 +52,7 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
     }
     
     func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        guard showLoadingCell else { return false }
+        guard shouldShowLoadingCell else { return false }
         return indexPath.row == planets.count
     }
 }
@@ -69,7 +69,7 @@ private extension PlanetsViewModelImpl {
         }
         
         currentPage += 1
-        showLoadingCell = planets.count < repository.count
+        shouldShowLoadingCell = planets.count < repository.count
     }
     
     func makeViewData(planets: [Planet]) -> [PlanetViewData] {

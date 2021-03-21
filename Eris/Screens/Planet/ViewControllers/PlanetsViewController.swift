@@ -33,7 +33,7 @@ final class PlanetsViewController: UIViewController {
 
 extension PlanetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.showLoadingCell ? viewModel.planets.count + 1 : viewModel.planets.count
+        return viewModel.shouldShowLoadingCell ? viewModel.planets.count + 1 : viewModel.planets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
