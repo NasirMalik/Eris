@@ -29,11 +29,12 @@ final class PlanetsRepositoryTests: XCTestCase {
         interactor.result = .success(responseObject)
                 
         expectation { exp in
-            self.sut.getPlanets { result in
+            self.sut.getPlanets(page: 1) { result in
                 XCTAssertTrue(Thread.isMainThread)
                 switch result {
                     case .success(let response):
                         XCTAssertEqual(self.interactor.getPlanetsCallCount, 1)
+                        XCTAssertEqual(self.interactor.getPageNumber, 1)
                         XCTAssertEqual(response, responseObject.planets)
                     case .failure(let error):
                         XCTAssertNil(error)
@@ -49,14 +50,15 @@ final class PlanetsRepositoryTests: XCTestCase {
         let responseObject = StubModelFactory.modelResponseObject()
         interactor.result = .success(responseObject)
         
-        try! coreDataService.savePlanets(planets: responseObject.planets)
+        try! coreDataService.savePlanets(page: 1, planets: responseObject.planets)
                 
         expectation { exp in
-            self.sut.getPlanets { result in
+            self.sut.getPlanets(page: 1) { result in
                 XCTAssertTrue(Thread.isMainThread)
                 switch result {
                     case .success(let response):
                         XCTAssertEqual(self.interactor.getPlanetsCallCount, 0)
+                        XCTAssertEqual(self.interactor.getPageNumber, 0)
                         XCTAssertEqual(response[0].name, responseObject.planets[0].name)
                         XCTAssertEqual(response[0].terrain, responseObject.planets[0].terrain)
                         XCTAssertEqual(response[0].url, responseObject.planets[0].url)

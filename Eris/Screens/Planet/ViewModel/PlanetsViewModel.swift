@@ -9,8 +9,12 @@ protocol PlanetsViewModelDelegate: class {
 }
 
 protocol PlanetsViewModel {
+    var shouldShowLoadingCell: Bool { get }
     var planets: [PlanetViewData] { get }
+    
     func loadData()
+    func deleteRow(index: Int)
+    func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool
 }
 
 final class PlanetsViewModelImpl: PlanetsViewModel {
@@ -22,7 +26,9 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
 
     weak var delegate: PlanetsViewModelDelegate?
     
+    var shouldShowLoadingCell: Bool = false
     var planets = [PlanetViewData]()
+    var currentPage = 1
     
     init(resository: PlanetsRepository,
          onCompletion: @escaping Completion) {
@@ -32,30 +38,44 @@ final class PlanetsViewModelImpl: PlanetsViewModel {
     
     func loadData() {
         delegate?.reloadData(state: .loading)
-        repository.getPlanets { [weak self] result in
+        repository.getPlanets(page: currentPage) { [weak self] result in
             switch result {
                 case .success(let response):
-                    self?.append(response)
+                    self?.parse(response)
                     self?.delegate?.reloadData(state: .success)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self?.shouldShowLoadingCell = false
                     self?.delegate?.reloadData(state: .error)
             }
         }
     
+    }
+    
+    func deleteRow(index: Int) {
+        // TODO: remove from CoreData
+        planets.remove(at: index)
+    }
+    
+    func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
+        guard shouldShowLoadingCell else { return false }
+        return indexPath.row == planets.count
     }
 }
 
 // MARK: Mapping
 private extension PlanetsViewModelImpl {
     
-    func append(_ response: [Planet]) {
+    func parse(_ response: [Planet]) {
         let viewDataObjects = makeViewData(planets: response)
         viewDataObjects.forEach {
             if !planets.contains($0) {
                 planets.append($0)
             }
         }
+        
+        currentPage += 1
+        shouldShowLoadingCell = planets.count < repository.count
     }
     
     func makeViewData(planets: [Planet]) -> [PlanetViewData] {
