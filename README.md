@@ -43,3 +43,7 @@ Following are few considerations while writing code
 
 ## Testing Notes
 - `NWPath.Status` doesn't return `.satisfied` on simulator so for getting best results please test on device.
+
+## Notes
+A detailed article was published on Medium and can be found [here](https://naxirmahmood.medium.com/ios-application-architecture-7607b367811d)
+
